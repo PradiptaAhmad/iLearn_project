@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ilearn_project/pages/onboarding/onboard.dart';
-import 'package:ilearn_project/pages/register.dart';
+import 'package:ilearn_project/pages/register_page/register.dart';
 
 void main() {
   runApp(const MyApp());
