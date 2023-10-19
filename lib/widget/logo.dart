@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
-  const Logo({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset("assets/logo/google.png"),
-        Image.asset("assets/logo/facebook.png"),
-        Image.asset("assets/logo/ig.png"),
-        Image.asset("assets/logo/twt.png"),
-      ],
+    final logoSize = 50.0;
+
+    final logoPaths = [
+      "assets/logo/google.png",
+      "assets/logo/facebook.png",
+      "assets/logo/ig.png",
+      "assets/logo/twt.png",
+    ];
+
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: List.generate(logoPaths.length, (index) {
+              return Padding(
+                padding: EdgeInsets.only(right: 10), // Jarak antara logo
+                child: Image.asset(
+                  logoPaths[index],
+                  width: logoSize,
+                  height: logoSize,
+                ),
+              );
+            }),
+          ),
+        ),
+      ),
     );
   }
 }

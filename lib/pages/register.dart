@@ -36,8 +36,9 @@ class Regsiter extends StatelessWidget {
             CheckboxWidget(),
             SizedBox(height: 15),
             ButtonInputUser(onPressed: (){}),
-            // Logo(),
-            SizedBox(height: 15),
+            SizedBox(height: 30,),
+            Logo(),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
