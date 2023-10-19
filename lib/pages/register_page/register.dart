@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ilearn_project/widget/btnInput.dart';
-import 'package:ilearn_project/widget/logo.dart';
-import 'package:ilearn_project/widget/textline.dart';
-import 'package:ilearn_project/widget/userinput.dart';
+import 'package:ilearn_project/pages/register_page/widget/btnInput.dart';
+import 'package:ilearn_project/pages/register_page/widget/logo.dart';
+import 'package:ilearn_project/pages/register_page/widget/textline.dart';
+import 'package:ilearn_project/pages/register_page/widget/userinput.dart';
 
-import '../core/themes.dart';
-import '../widget/checkbox.dart';
+import '../../core/themes.dart';
+import 'widget/checkbox.dart';
 
 class Regsiter extends StatelessWidget {
   const Regsiter({super.key});
