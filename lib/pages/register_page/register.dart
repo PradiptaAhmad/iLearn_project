@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnInput.dart';
 import 'package:ilearn_project/pages/register_page/widget/logo.dart';
-import 'package:ilearn_project/pages/register_page/widget/textline.dart';
+import 'package:ilearn_project/core/themes.dart';
+import 'package:ilearn_project/pages/register_page/widget/checkbox.dart';
 import 'package:ilearn_project/pages/register_page/widget/userinput.dart';
-
-import '../../core/themes.dart';
-import 'widget/checkbox.dart';
 
 class Regsiter extends StatelessWidget {
   const Regsiter({super.key});
@@ -36,8 +34,28 @@ class Regsiter extends StatelessWidget {
             CheckboxWidget(),
             SizedBox(height: 15),
             ButtonInputUser(onPressed: (){}),
-            // Logo(),
-            SizedBox(height: 15),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 2,
+                  width: 150,  // Lebar garis
+                  color: peachColor,
+                ),
+                SizedBox(width: 10,),
+                Text('or', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+                SizedBox(width: 10,),
+                Container(
+                  height: 2,
+                  width: 150,  // Lebar garis
+                  color: peachColor,
+                ),
+              ],
+            ),
+            SizedBox(height: 20,),
+            Logo(),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
