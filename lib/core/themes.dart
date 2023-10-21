@@ -138,8 +138,12 @@ TextStyle subTitleNews() {
 }
 
 TextStyle bodyNews() {
+=======
+TextStyle bottomTxtLogin({required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
+          color: color,
           fontWeight: FontWeight.w400,
           fontSize: figmaFontsize(14)));
 }
+
