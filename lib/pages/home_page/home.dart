@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    NewsCard(),
+                    // NewsCard(), => ntar dluub
                   ],
                 ),
               )
