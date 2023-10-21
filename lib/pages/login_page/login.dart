@@ -31,11 +31,11 @@ class Login extends StatelessWidget {
             SizedBox(height: 40),
             Text(
               "Hi There!",
-              style: onBoardTitle(color: Color(0xFF1F1D2B)),
+              style: onBoardTitle(),
             ),
             Text(
               "Enter details below to continue",
-              style: subHeaderCardHome(color: Color(0xFF1F1D2B)),
+              style: subHeaderCardHome(),
             ),
             SizedBox(
               height: 20,

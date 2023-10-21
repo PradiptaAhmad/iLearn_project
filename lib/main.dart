@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ilearn_project/pages/home_page/widget/header_card.dart';
 import 'package:ilearn_project/pages/home_page/widget/news_card.dart';
 import 'package:ilearn_project/pages/onboarding/onboard.dart';

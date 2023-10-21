@@ -18,7 +18,7 @@ figmaFontsize(int fontSize) {
 TextStyle onBoardTitle() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-        color: Colors.black,
+        color: Color(0xFF1F1D2B),
           fontWeight: FontWeight.w700,
           fontSize: figmaFontsize(23)));
 }
@@ -59,7 +59,7 @@ TextStyle headerCardHome() {
 TextStyle subHeaderCardHome() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-        color: peachText,
+        color: Color(0xFF1F1D2B),
           fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(12)));
 }
@@ -137,8 +137,6 @@ TextStyle subTitleNews() {
           fontSize: figmaFontsize(14)));
 }
 
-TextStyle bodyNews() {
-=======
 TextStyle bottomTxtLogin({required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
