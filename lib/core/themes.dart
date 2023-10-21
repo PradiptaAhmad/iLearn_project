@@ -76,6 +76,7 @@ TextStyle btnTime() {
 TextStyle titleCard() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
+        color: Colors.black,
           fontWeight: FontWeight.w600,
           fontSize: figmaFontsize(14)));
 }
@@ -83,7 +84,8 @@ TextStyle titleCard() {
 TextStyle subTitleCard() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          fontWeight: FontWeight.w600,
+        color: primaryColor,
+          fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(12)));
 }
 

@@ -12,8 +12,8 @@ class HeaderCard extends StatelessWidget {
 
     return Container(
       constraints: BoxConstraints(
-        minWidth: 200,
-        minHeight: 275,
+        minWidth: 230,
+        minHeight: 255,
       ),
       decoration: BoxDecoration(
         color: Color(0xFFFFD1AD),
@@ -31,9 +31,25 @@ class HeaderCard extends StatelessWidget {
                 Text("10 Exercies", style: subHeaderCardHome(),),
                 SizedBox(height: 20,),
                 ElevatedButton(
-                  onPressed: (){},
-                  child: Text("30 Minutes"),
-                ),
+                  onPressed: () {},
+                  child: Container(
+                    width: 95.0,
+                    height: 22.0,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "30 Minutes",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 11
+                      ),
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white, // Warna latar belakang putih
+                    padding: EdgeInsets.all(0), // Menghilangkan padding bawaan
+                  ),
+                )
               ],
             ),
           ),
