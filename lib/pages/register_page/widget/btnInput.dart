@@ -19,7 +19,7 @@ class ButtonInputUser extends StatelessWidget {
       ),
       child: Text(
         'Register',
-        style: buttonTxt(color: Colors.white),
+        style: buttonTxt(),
       ),
     );
   }

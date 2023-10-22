@@ -15,35 +15,31 @@ figmaFontsize(int fontSize) {
   return fontSize * 0.95;
 }
 
-//OnBoarding
-
-TextStyle onBoardTitle({required final color}) {
+TextStyle onBoardTitle() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.black,
+        color: Color(0xFF1F1D2B),
           fontWeight: FontWeight.w700,
           fontSize: figmaFontsize(23)));
 }
 
-TextStyle onBoardDesc({required final color}) {
+TextStyle onBoardDesc() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.black,
           fontWeight: FontWeight.w400,
           fontSize: figmaFontsize(16)));
 }
 
 //titile buat detail page
 
-TextStyle titlePage({required final color}) {
+TextStyle titlePage() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.black,
           fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(20)));
 }
 
-TextStyle buttonTxt({required final color}) {
+TextStyle buttonTxt() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
           color: Colors.white,
@@ -53,96 +49,90 @@ TextStyle buttonTxt({required final color}) {
 
 //Card yg di header home
 
-TextStyle headerCardHome({required final color}) {
+TextStyle headerCardHome() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.black,
           fontWeight: FontWeight.w600,
           fontSize: figmaFontsize(16)));
 }
 
-TextStyle subHeaderCardHome({required final color}) {
+TextStyle subHeaderCardHome() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.black,
+        color: Color(0xFF1F1D2B),
           fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(12)));
 }
 
-TextStyle btnTime({required final color}) {
+TextStyle btnTime() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.black,
           fontWeight: FontWeight.w600,
           fontSize: figmaFontsize(16)));
 }
 
 //Card yang di home
 
-TextStyle titleCard({required final color}) {
+TextStyle titleCard() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.black,
+        color: Colors.black,
           fontWeight: FontWeight.w600,
           fontSize: figmaFontsize(14)));
 }
 
-TextStyle subTitleCard({required final color}) {
+TextStyle subTitleCard() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: color.mainColor,
-          fontWeight: FontWeight.w600,
+        color: primaryColor,
+          fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(12)));
 }
 
 //Sub titile ex."For You" yang di home itu, dan deskripsinya
 
-TextStyle subTitle({required final color}) {
+TextStyle subTitle() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: color,
+        color: Colors.black,
           fontWeight: FontWeight.w600,
           fontSize: figmaFontsize(16)));
 }
 
-TextStyle decsSubTitle({required final color}) {
+TextStyle decsSubTitle() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: color,
+        color: Colors.black,
           fontWeight: FontWeight.w400,
           fontSize: figmaFontsize(12)));
 }
 
-TextStyle txtCategory({required final color}) {
+TextStyle txtCategory() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: color,
           fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(10)));
 }
 
-TextStyle txtSeeAll({required final color}) {
+TextStyle txtSeeAll() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: color,
           fontWeight: FontWeight.w400,
           fontSize: figmaFontsize(12)));
 }
 
 //News
 
-TextStyle titleNews({required final color}) {
+TextStyle titleNews() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: color,
           fontWeight: FontWeight.w600,
           fontSize: figmaFontsize(23)));
 }
 
-TextStyle subTitleNews({required final color}) {
+TextStyle subTitleNews() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: color,
           fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(14)));
 }
@@ -154,16 +144,4 @@ TextStyle bottomTxtLogin({required final color}) {
           fontWeight: FontWeight.w400,
           fontSize: figmaFontsize(14)));
 }
-
-TextStyle bodyNews({required final color}) {
-  return GoogleFonts.poppins(
-      textStyle: TextStyle(
-          color: color,
-          fontWeight: FontWeight.w400,
-          fontSize: figmaFontsize(14)));
-}
-
-
-
-
 
