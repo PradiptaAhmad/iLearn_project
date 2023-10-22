@@ -15,10 +15,10 @@ class NewsCard extends StatelessWidget {
         children: [
           for (int i = 1; i < 8; i++)
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
               padding: EdgeInsets.symmetric(
-                vertical: screenHeight * 0.09, // Adjust as needed
-                horizontal: screenWidth * 0.08, // Adjust as needed
+                vertical: screenHeight * 0.02, // Adjust as needed
+                horizontal: screenWidth * 0.02, // Adjust as needed
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -35,18 +35,12 @@ class NewsCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // ClipRRect(
-                    //   borderRadius: BorderRadius.only(
-                    //     topLeft: Radius.circular(10),
-                    //     topRight: Radius.circular(10),
-                    //   ),
-                    //   child: Image.asset(
-                    //     "assets/news/bird.png",
-                    //     height: 140,
-                    //     fit: BoxFit.cover,
-                    //     width: double.infinity,
-                    //   ),
-                    // ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(screenHeight * 0.025),
+                      ),
+                      child: Image.asset("assets/news/bird.png"),
+                    ),
                     Text("Lorem Ipsum", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),),
                     Text("Lorem Ipsum", style: TextStyle(fontWeight: FontWeight.w300, fontSize: 8),),
                   ],

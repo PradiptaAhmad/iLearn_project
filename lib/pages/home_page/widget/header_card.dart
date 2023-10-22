@@ -11,10 +11,7 @@ class HeaderCard extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
-      constraints: BoxConstraints(
-        minWidth: 230,
-        minHeight: 255,
-      ),
+      width: screenWidth * 0.40,
       decoration: BoxDecoration(
         color: Color(0xFFFFD1AD),
         borderRadius: BorderRadius.circular(20.0), // Atur nilai sesuai kebutuhan Anda
@@ -33,8 +30,8 @@ class HeaderCard extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {},
                   child: Container(
-                    width: 95.0,
-                    height: 22.0,
+                    width: screenWidth *0.19,
+                    height: screenHeight* 0.02,
                     alignment: Alignment.center,
                     child: Text(
                       "30 Minutes",

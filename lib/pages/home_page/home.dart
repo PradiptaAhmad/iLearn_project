@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ilearn_project/pages/home_page/widget/appbar.dart';
 import 'package:ilearn_project/pages/home_page/widget/category.dart';
 import 'package:ilearn_project/pages/home_page/widget/courses_card.dart';
 import 'package:ilearn_project/pages/home_page/widget/mycourses_card.dart';
 import 'package:ilearn_project/pages/home_page/widget/news_card.dart';
+import 'package:ilearn_project/pages/home_page/widget/searchbar.dart';
 
 import '../../core/themes.dart';
 import 'widget/header_card.dart';
@@ -17,6 +19,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
+      // appBar: AppBar(
+      //   flexibleSpace:
+      //   AppBar(),
+      // ),
       body: SingleChildScrollView(
         child: Container(
           width: screenWidth,
@@ -46,10 +52,28 @@ class HomePage extends StatelessWidget {
                   Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                      margin: EdgeInsets.only(top: screenHeight * 0.205),
+                      margin: EdgeInsets.only(top: screenHeight * 0.190),
                       width: screenWidth * 0.75,
                       height: screenHeight * 0.17,
                       child: HeaderCard(),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      margin: EdgeInsets.only(top: screenHeight * 0.084),
+                      width: screenWidth * 0.95,
+                      height: screenHeight * 0.08,
+                      child: CustomSearchBar(),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      margin: EdgeInsets.only(top: screenHeight * 0.0007),
+                      width: screenWidth * 0.95,
+                      height: screenHeight * 0.08,
+                      child: AppBarCustom(),
                     ),
                   ),
                 ],
@@ -92,8 +116,8 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // NewsCard(), => ntar dluub
-                  ],
+                    NewsCard(),
+                ]
                 ),
               )
             ],
