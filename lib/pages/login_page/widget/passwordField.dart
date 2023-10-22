@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controller/loginPageController.dart';
+import 'package:ilearn_project/controllers/loginPageController.dart';
 
 class PasswordFIeld extends StatelessWidget {
   final String label;
@@ -12,8 +12,7 @@ class PasswordFIeld extends StatelessWidget {
     required this.textInputType,
   });
 
-  final LoginPageController loginPageController =
-      Get.put(LoginPageController());
+  final loginPageC = Get.find<LoginPageController>();
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -26,7 +25,7 @@ class PasswordFIeld extends StatelessWidget {
       return Container(
         width: screenWidth * 0.9,
         child: TextField(
-          obscureText: loginPageController.isObsecure.value,
+          obscureText: loginPageC.isObsecure.value,
           keyboardType: textInputType,
           style: TextStyle(
             color: Colors.black,
@@ -41,10 +40,10 @@ class PasswordFIeld extends StatelessWidget {
             suffixIcon: IconButton(
               onPressed: () {
                 print("this is clicked");
-                loginPageController.setObsecure();
+                loginPageC.setObsecure();
               },
               icon: Icon(
-                loginPageController.isObsecure.value
+                loginPageC.isObsecure.value
                     ? Icons.visibility_off
                     : Icons.visibility,
               ),
