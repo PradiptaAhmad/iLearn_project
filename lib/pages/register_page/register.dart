@@ -1,9 +1,15 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:ilearn_project/core/loading.dart';
+import 'package:ilearn_project/pages/register_page/widget/TextField/email.dart';
+import 'package:ilearn_project/pages/register_page/widget/TextField/last_name.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnInput.dart';
 import 'package:ilearn_project/pages/register_page/widget/logo.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/pages/register_page/widget/checkbox.dart';
-import 'package:ilearn_project/pages/register_page/widget/userinput.dart';
+import 'package:ilearn_project/pages/register_page/widget/TextField/password.dart';
+import 'package:ilearn_project/pages/register_page/widget/TextField/first_name.dart';
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -12,9 +18,24 @@ class Register extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
+    _showLoading() {
+      showDialog(
+          context: context,
+          builder: (BuildContext dialogContext) {
+            return Container(
+              width: screenWidth * 0.4,
+              child: Center(
+                child: Image.asset(
+                  'assets/gif/loading.gif',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            );
+          });
+    }
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -33,13 +54,44 @@ class Register extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 40),
-              InputUser(label: 'First Name', icon: Icons.person, textInputType: TextInputType.name,),
-              InputUser(label: 'Last Name', icon: Icons.person, textInputType: TextInputType.name,),
-              InputUser(label: 'Email', icon: Icons.mail, textInputType: TextInputType.emailAddress,),
-              InputUser(label: 'Password', icon: Icons.lock, textInputType: TextInputType.visiblePassword,),
+              FirstName(
+                label: 'First Name',
+                icon: Icons.person,
+                textInputType: TextInputType.name,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              LastName(
+                label: 'Last Name',
+                icon: Icons.person,
+                textInputType: TextInputType.name,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Email(
+                label: 'Email',
+                icon: Icons.mail,
+                textInputType: TextInputType.emailAddress,
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              PasswordFIeld(
+                  label: "Password",
+                  icon: Icons.lock,
+                  textInputType: TextInputType.visiblePassword),
+              SizedBox(
+                height: 5,
+              ),
               CheckboxWidget(),
               SizedBox(height: 15),
-              ButtonInputUser(onPressed: (){}),
+              ButtonInputUser(onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  print("sukses");
+                }
+              }),
               SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -78,5 +130,6 @@ class Register extends StatelessWidget {
         ),
       ),
     );
+
   }
 }
