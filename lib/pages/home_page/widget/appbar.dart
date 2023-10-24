@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:ilearn_project/appBar/userpoint.dart';
 
 import '../../../core/themes.dart';
 
 class AppBarCustom extends StatelessWidget {
   const AppBarCustom({super.key});
+
+  Widget profileImage() {
+    return ProfileImage();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +36,7 @@ class AppBarCustom extends StatelessWidget {
                 bottom: 0,
                 right: 0,
                 child: Container(
-                  width: screenWidth * 0.035,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white, width: 2),
-                  ),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.red,
-                  ),
+                  child: profileImage(),
                 ),
               ),
             ],
