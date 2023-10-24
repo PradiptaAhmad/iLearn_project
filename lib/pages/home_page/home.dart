@@ -4,6 +4,7 @@ import 'package:ilearn_project/pages/home_page/widget/category.dart';
 import 'package:ilearn_project/pages/home_page/widget/courses_card.dart';
 import 'package:ilearn_project/pages/home_page/widget/mycourses_card.dart';
 import 'package:ilearn_project/pages/home_page/widget/news_card.dart';
+import 'package:ilearn_project/pages/home_page/widget/searchbar.dart';
 import 'package:ilearn_project/appBar/searchbar.dart';
 
 import '../../core/themes.dart';
