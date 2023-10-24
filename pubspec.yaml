@@ -34,6 +34,10 @@ dependencies:
   introduction_screen: ^3.1.12
   google_fonts: ^6.1.0
   flutter_svg: ^2.0.7
+  shared_preferences: ^2.2.2
+  firebase_auth: ^4.11.1
+  firebase_storage: ^11.3.1
+  cloud_firestore: ^4.11.0
   carousel_slider: ^4.2.1
 
   # The following adds the Cupertino Icons font to your application.
@@ -64,6 +68,7 @@ flutter:
   assets:
     - assets/images/
     - assets/logo/
+    - assets/gif/
     - assets/news/
 
 

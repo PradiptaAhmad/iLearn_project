@@ -5,7 +5,7 @@ class BtnLogo extends StatelessWidget {
   final logoSize = 50.0;
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
+    // double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
     Widget _InkWell(VoidCallback? OnTap, String imgPath) {
