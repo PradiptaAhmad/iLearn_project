@@ -23,12 +23,12 @@ class _OnBoardingState extends State<OnBoarding> {
           PageViewModel(
             image: Image.asset("assets/images/reading.png"),
             title: 'Kesusahan dalam belajar?',
-            body: '[nama aplikasi] memberikan kemudahan dalam belajar karena kamu bisa belajar dimanapun dan kapanpun ',
+            body: 'ILearn memberikan kemudahan dalam belajar karena kamu bisa belajar dimanapun dan kapanpun ',
           ),
           PageViewModel(
             image: Image.asset("assets/images/laying.png"),
             title: 'Materi yang beragam',
-            body: '[nama aplikasi] mempunyai beragam materi menarik yang bisa dipelajari dari sekarang ',
+            body: 'ILearn mempunyai beragam materi menarik yang bisa dipelajari dari sekarang ',
           ),
           PageViewModel(
             image: Image.asset("assets/images/chilling.png"),

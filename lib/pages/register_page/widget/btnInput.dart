@@ -23,6 +23,11 @@ class ButtonInputUser extends StatelessWidget {
           'Register',
           style: buttonTxt(color: Colors.white),
         ),
+        minimumSize: Size(365, 43),
+      ),
+      child: Text(
+        'Register',
+        style: buttonTxt(),
       ),
     );
   }
