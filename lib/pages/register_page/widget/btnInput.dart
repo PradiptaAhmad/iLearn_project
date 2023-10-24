@@ -8,21 +8,18 @@ class ButtonInputUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      child: ElevatedButton(
-        onPressed: this.onPressed,
-        style: ElevatedButton.styleFrom(
-          primary: color,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          minimumSize: Size(365, 43),
+    return ElevatedButton(
+      onPressed: this.onPressed,
+      style: ElevatedButton.styleFrom(
+        primary: primaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
-        child: Text(
-          'Register',
-          style: buttonTxt(color: Colors.white),
-        ),
+        minimumSize: Size(365, 43),
+      ),
+      child: Text(
+        'Register',
+        style: buttonTxt(),
       ),
     );
   }

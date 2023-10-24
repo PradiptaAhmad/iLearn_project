@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -23,12 +25,12 @@ class _OnBoardingState extends State<OnBoarding> {
           PageViewModel(
             image: Image.asset("assets/images/reading.png"),
             title: 'Kesusahan dalam belajar?',
-            body: '[nama aplikasi] memberikan kemudahan dalam belajar karena kamu bisa belajar dimanapun dan kapanpun ',
+            body: 'ILearn memberikan kemudahan dalam belajar karena kamu bisa belajar dimanapun dan kapanpun ',
           ),
           PageViewModel(
             image: Image.asset("assets/images/laying.png"),
             title: 'Materi yang beragam',
-            body: '[nama aplikasi] mempunyai beragam materi menarik yang bisa dipelajari dari sekarang ',
+            body: 'ILearn mempunyai beragam materi menarik yang bisa dipelajari dari sekarang ',
           ),
           PageViewModel(
             image: Image.asset("assets/images/chilling.png"),
@@ -40,13 +42,16 @@ class _OnBoardingState extends State<OnBoarding> {
         // next: Icon(Icons.navigate_next),
         done: ElevatedButton(
             onPressed: () {
+              Get.toNamed(RouteName.login);
               setState(() {
                 showBottomPart =
                     false; // Sembunyikan bagian bawah setelah "Get Started" ditekan
               });
             },
             child: Text("Get Started")),
-        onDone: () {},
+        onDone: () {
+          
+        },
       ),
       // bottomNavigationBar: Container(
       //   alignment: Alignment.bottomCenter,

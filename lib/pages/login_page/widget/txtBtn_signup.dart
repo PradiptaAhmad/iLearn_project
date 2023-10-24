@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ilearn_project/core/themes.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 
 class btnSingup extends StatelessWidget {
   const btnSingup({super.key});
@@ -14,6 +16,7 @@ class btnSingup extends StatelessWidget {
           style: bottomTxtLogin(color: Colors.black),
         ),
         InkWell(
+          onTap: () => Get.toNamed(RouteName.register),
           child: Text(
             "Sign Up",
             style: bottomTxtLogin(color: peachColor),
