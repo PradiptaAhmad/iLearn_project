@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 //Color
 const Color primaryColor = Color(0xFFFF8080);
+const Color inActiveColor = Color.fromARGB(255, 93, 93, 93);
 const Color peachColor = Color(0xFFFFD1AD);
 const Color peachText = Color(0xFFBA5638);
 const Color header = Color(0xFFFBECE7);

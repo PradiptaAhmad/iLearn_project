@@ -10,6 +10,23 @@ class RegisterC extends GetxController {
   var email = ''.obs;
   var password = ''.obs;
 
+
+  // form validator
+  var isFirstNameValid = false.obs;
+  var isEmailValid = false.obs;
+  var isPasswordValid = false.obs;
+  var isChecked = false.obs;
+  
+  bool isAllValid() {
+    if (isFirstNameValid.value == true &&
+        isEmailValid.value == true &&
+        isPasswordValid.value == true &&
+        isChecked.value == true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   void setObsecure() {
     isObsecure.value = !isObsecure.value;
   }

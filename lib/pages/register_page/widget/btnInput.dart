@@ -3,8 +3,8 @@ import 'package:ilearn_project/core/themes.dart';
 
 class ButtonInputUser extends StatelessWidget {
   final VoidCallback onPressed;
-
-  const ButtonInputUser({Key? key, required this.onPressed}) : super(key: key);
+  final Color color;
+  const ButtonInputUser({Key? key, required this.onPressed, required this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class ButtonInputUser extends StatelessWidget {
       child: ElevatedButton(
         onPressed: this.onPressed,
         style: ElevatedButton.styleFrom(
-          primary: primaryColor,
+          primary: color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),

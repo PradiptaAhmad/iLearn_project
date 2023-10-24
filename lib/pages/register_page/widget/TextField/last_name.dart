@@ -1,37 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ilearn_project/controllers/register_controller/registerC.dart';
 
 class LastName extends StatelessWidget {
   final String label;
   final IconData icon;
   final TextInputType textInputType;
 
-  const LastName({
+  LastName({
     required this.label,
     required this.icon,
     required this.textInputType,
     Key? key,
   }) : super(key: key);
-
+  static final registerC = Get.put(RegisterC());
   @override
   Widget build(BuildContext context) {
-        final _formKey = GlobalKey<FormState>();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: screenWidth * 0.9,
       child: Form(
         autovalidateMode: AutovalidateMode.onUserInteraction,
-        key: _formKey,
         child: TextFormField(
           keyboardType: textInputType,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'first name could not be empty';
-            }
-            return null;
-          },
           onChanged: (value) {
-            _formKey.currentState?.validate();
+            if(value!.isNotEmpty){
+              registerC.last_name.value = value;
+            }
           },
           style: TextStyle(
             color: Colors.black,

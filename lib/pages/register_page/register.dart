@@ -1,7 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:ilearn_project/core/loading.dart';
+import 'package:get/get.dart';
+import 'package:ilearn_project/controllers/register_controller/registerC.dart';
 import 'package:ilearn_project/pages/register_page/widget/TextField/email.dart';
 import 'package:ilearn_project/pages/register_page/widget/TextField/last_name.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnInput.dart';
@@ -12,30 +11,15 @@ import 'package:ilearn_project/pages/register_page/widget/TextField/password.dar
 import 'package:ilearn_project/pages/register_page/widget/TextField/first_name.dart';
 
 class Register extends StatelessWidget {
-  const Register({super.key});
+  const Register({Key? key}); // Perbaikan pada constructor
 
-
+  static final registerC = Get.put(RegisterC());
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-    double screenWidth = MediaQuery.of(context).size.width;
+    // double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    _showLoading() {
-      showDialog(
-          context: context,
-          builder: (BuildContext dialogContext) {
-            return Container(
-              width: screenWidth * 0.4,
-              child: Center(
-                child: Image.asset(
-                  'assets/gif/loading.gif',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            );
-          });
-    }
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -46,11 +30,11 @@ class Register extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                    "Register",
-                    style: TextStyle(
-                        fontSize: 23,
-                        fontWeight: FontWeight.w500
-                    )
+                  "Register",
+                  style: TextStyle(
+                    fontSize: 23,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
               SizedBox(height: 40),
@@ -79,39 +63,42 @@ class Register extends StatelessWidget {
                 height: 15,
               ),
               PasswordFIeld(
-                  label: "Password",
-                  icon: Icons.lock,
-                  textInputType: TextInputType.visiblePassword),
+                // Perbaikan pada nama komponen
+                label: "Password",
+                icon: Icons.lock,
+                textInputType: TextInputType.visiblePassword,
+              ),
               SizedBox(
                 height: 5,
               ),
               CheckboxWidget(),
               SizedBox(height: 15),
-              ButtonInputUser(onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  print("sukses");
-                }
-              }),
-              SizedBox(height: 20,),
+              Obx(() => registerC.isAllValid()
+                  ? ButtonInputUser(
+                      onPressed: () {},
+                      color: primaryColor,
+                    )
+                  : ButtonInputUser(onPressed: () {}, color: inActiveColor)),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     height: 2,
-                    width: 150,  // Lebar garis
+                    width: 150, // Lebar garis
                     color: peachColor,
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(width: 10),
                   Text('or', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
-                  SizedBox(width: 10,),
+                  SizedBox(width: 10),
                   Container(
                     height: 2,
-                    width: 150,  // Lebar garis
+                    width: 150, // Lebar garis
                     color: peachColor,
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Logo(),
               SizedBox(height: 20),
               Row(
@@ -119,17 +106,17 @@ class Register extends StatelessWidget {
                 children: [
                   Text("Already have an account?"),
                   SizedBox(width: 10),
-                  Text("Login", style: TextStyle(
-                    color: Color(0xFFFFD1AD)
-                  ),)
+                  Text(
+                    "Login",
+                    style: TextStyle(color: Color(0xFFFFD1AD)),
+                  ),
                 ],
-              )
+              ),
               // Logo()
             ],
           ),
         ),
       ),
     );
-
   }
 }

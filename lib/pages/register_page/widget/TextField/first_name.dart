@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ilearn_project/controllers/register_controller/registerC.dart';
 
 class FirstName extends StatelessWidget {
   final String label;
   final IconData icon;
   final TextInputType textInputType;
 
-  const FirstName({
+  FirstName({
     required this.label,
     required this.icon,
     required this.textInputType,
     Key? key,
   }) : super(key: key);
-
+  static final _formKey = GlobalKey<FormState>();
+  static final registerC = Get.put(RegisterC());
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
@@ -32,7 +33,12 @@ class FirstName extends StatelessWidget {
             return null;
           },
           onChanged: (value) {
-            _formKey.currentState?.validate();
+            if(_formKey.currentState!.validate()) {
+              registerC.isFirstNameValid.value = true;
+              registerC.first_name.value = value;
+            } else {
+              registerC.isFirstNameValid.value = false;
+            }
           },
           style: TextStyle(
             color: Colors.black,

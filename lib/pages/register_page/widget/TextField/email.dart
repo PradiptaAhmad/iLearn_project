@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ilearn_project/controllers/register_controller/registerC.dart';
+
 
 class Email extends StatelessWidget {
   final String label;
   final IconData icon;
   final TextInputType textInputType;
 
-  const Email({
+  Email({
     required this.label,
     required this.icon,
     required this.textInputType,
     Key? key,
   }) : super(key: key);
-
+  static final _formKey = GlobalKey<FormState>();
+  static final registerC = Get.put(RegisterC());
   @override
   Widget build(BuildContext context) {
     String? validateEmail(String value) {
@@ -26,10 +30,8 @@ class Email extends StatelessWidget {
 
       return null;
     }
-
-    final _formKey = GlobalKey<FormState>();
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    // double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: screenWidth * 0.9,
       child: Form(
@@ -47,7 +49,12 @@ class Email extends StatelessWidget {
             }
           },
           onChanged: (value) {
-            _formKey.currentState?.validate();
+            if (_formKey.currentState!.validate()) {
+              registerC.isEmailValid.value = true;
+              registerC.email.value = value;
+            } else {
+              registerC.isEmailValid.value = false;
+            }
           },
           decoration: InputDecoration(
             filled: true,

@@ -12,7 +12,8 @@ class PasswordFIeld extends StatelessWidget {
     required this.icon,
     required this.textInputType,
   });
-
+  static final _formKey = GlobalKey<FormState>();
+  static final registerC = Get.put(RegisterC());
   @override
   Widget build(BuildContext context) {
     Get.put(RegisterC());
@@ -28,7 +29,6 @@ class PasswordFIeld extends StatelessWidget {
     }
 
     return Obx(() {
-      final _formKey = GlobalKey<FormState>();
       double screenWidth = MediaQuery.of(context).size.width;
       double screenHeight = MediaQuery.of(context).size.height;
 
@@ -50,7 +50,12 @@ class PasswordFIeld extends StatelessWidget {
               }
             },
             onChanged: (value) {
-              _formKey.currentState?.validate();
+              if (_formKey.currentState!.validate()) {
+                registerC.isPasswordValid.value = true;
+                registerC.password.value = value;
+              } else {
+                registerC.isPasswordValid.value = false;
+              }
             },
             decoration: InputDecoration(
               filled: true,
