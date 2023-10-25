@@ -6,8 +6,9 @@ import '../core/themes.dart';
 
 class AppBarCustom extends StatelessWidget {
   final String appBarText; // Add a parameter for the text
+  final bool showSearchBar; // Parameter untuk menentukan apakah menampilkan CustomSearchBar
 
-  const AppBarCustom({Key? key, required this.appBarText})
+  const AppBarCustom({Key? key, required this.appBarText, this.showSearchBar = true})
       : super(key: key);
 
   @override
@@ -27,7 +28,7 @@ class AppBarCustom extends StatelessWidget {
             ],
           ),
           SizedBox(height: screenHeight*0.03),
-          CustomSearchBar(),
+          if (showSearchBar) CustomSearchBar(), // Menampilkan CustomSearchBar sesuai kondisi
         ],
       ),
     );
