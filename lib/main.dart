@@ -4,6 +4,7 @@ import 'package:ilearn_project/pages/foryou_page/foryou.dart';
 import 'package:ilearn_project/pages/home_page/widget/header_card.dart';
 import 'package:ilearn_project/pages/home_page/widget/news_card.dart';
 import 'package:ilearn_project/pages/onboarding/onboard.dart';
+import 'package:ilearn_project/pages/profile_page/profile.dart';
 
 import 'data/news.dart';
 import 'pages/home_page/home.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ForYou(),
+      home: ProfilePage(),
     );
   }
 }
