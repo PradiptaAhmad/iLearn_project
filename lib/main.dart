@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/pages/foryou_page/foryou.dart';
-import 'package:ilearn_project/pages/home_page/widget/header_card.dart';
-import 'package:ilearn_project/pages/home_page/widget/news_card.dart';
+import 'package:ilearn_project/pages/login_page/login.dart';
 import 'package:ilearn_project/pages/onboarding/onboard.dart';
 import 'package:ilearn_project/pages/profile_page/profile.dart';
 

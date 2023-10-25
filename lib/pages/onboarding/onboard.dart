@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -40,13 +42,16 @@ class _OnBoardingState extends State<OnBoarding> {
         // next: Icon(Icons.navigate_next),
         done: ElevatedButton(
             onPressed: () {
+              Get.toNamed(RouteName.login);
               setState(() {
                 showBottomPart =
                     false; // Sembunyikan bagian bawah setelah "Get Started" ditekan
               });
             },
             child: Text("Get Started")),
-        onDone: () {},
+        onDone: () {
+          
+        },
       ),
       // bottomNavigationBar: Container(
       //   alignment: Alignment.bottomCenter,
