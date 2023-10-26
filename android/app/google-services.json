@@ -30,6 +30,13 @@
             {
               "client_id": "77975660188-vrsh03cv8g0glpbf95tugnnah7gqan64.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "77975660188-jl4l8u0k8m08v7dr0mli3mo067dep5p5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ilearnProject"
+              }
             }
           ]
         }

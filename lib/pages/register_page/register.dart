@@ -73,14 +73,27 @@ class Register extends StatelessWidget {
               ),
               CheckboxWidget(),
               SizedBox(height: 15),
+              Obx(() {
+                return Visibility(
+                  visible: !registerC.isEmailUnique.value,
+                  child: Text(
+                    "This email is already in use",
+                    style: errorText(color: isError),
+                  ),
+                );
+              }),
+
+              
               Obx(() => registerC.isAllValid()
                   ? ButtonInputUser(
-                      onPressed: () {},
+                      onPressed: () {
+                        registerC.createUserLogin();
+                      },
                       color: primaryColor,
                     )
                   : ButtonInputUser(
                       onPressed: () {
-
+                        
                       },
                       color: inActiveColor)),
               SizedBox(height: 20),

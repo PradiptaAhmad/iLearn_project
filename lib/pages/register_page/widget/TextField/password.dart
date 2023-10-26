@@ -17,8 +17,6 @@ class PasswordFIeld extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(RegisterC());
-    final registerC = Get.find<RegisterC>();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 

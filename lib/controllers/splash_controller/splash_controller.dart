@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashController extends GetxController {
@@ -18,12 +19,12 @@ class SplashController extends GetxController {
       prefs.setBool("isFirstTime", false);
       Future.delayed(Duration(seconds: 2), () {
         delayed(() {
-          Get.offAllNamed("/login");
+          Get.offAllNamed(RouteName.login);
         });
       });
     } else {
       delayed(() {
-        Get.offAllNamed("/onboarding");
+        Get.offAllNamed(RouteName.login);
       });
     }
   }
