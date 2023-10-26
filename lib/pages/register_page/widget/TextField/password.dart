@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/loginPageController.dart';
+import 'package:ilearn_project/controllers/login_controller/loginPageController.dart';
 import 'package:ilearn_project/controllers/register_controller/registerC.dart';
 
 class PasswordFIeld extends StatelessWidget {
