@@ -4,7 +4,7 @@ import 'package:ilearn_project/bindings/loginB.dart';
 import 'package:ilearn_project/pages/login_page/login.dart';
 import 'package:ilearn_project/pages/onboarding/onboard.dart';
 import 'package:ilearn_project/pages/profile_page/profile.dart';
-
+import 'package:ilearn_project/routes/app_pages.dart';
 import 'data/news.dart';
 import 'pages/home_page/home.dart';
 

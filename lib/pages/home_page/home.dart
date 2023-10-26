@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                       margin: EdgeInsets.only(top: screenHeight * 0.084),
                       width: screenWidth * 0.95,
                       height: screenHeight * 0.08,
-                      child: CustomSearchBar(),
+                      child: SearchWidget(),
                     ),
                   ),
                   Align(
