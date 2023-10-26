@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/register_controller/registerC.dart';
+import 'package:ilearn_project/controllers/register_controller/register_controller.dart';
 import 'package:ilearn_project/pages/register_page/widget/TextField/email.dart';
 import 'package:ilearn_project/pages/register_page/widget/TextField/last_name.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnInput.dart';
@@ -13,7 +13,7 @@ import 'package:ilearn_project/pages/register_page/widget/TextField/first_name.d
 class Register extends StatelessWidget {
   const Register({Key? key}); // Perbaikan pada constructor
 
-  static final registerC = Get.put(RegisterC());
+  static final registerC = Get.find<RegisterC>();
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,11 @@ class Register extends StatelessWidget {
                       onPressed: () {},
                       color: primaryColor,
                     )
-                  : ButtonInputUser(onPressed: () {}, color: inActiveColor)),
+                  : ButtonInputUser(
+                      onPressed: () {
+
+                      },
+                      color: inActiveColor)),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

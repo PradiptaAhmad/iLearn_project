@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/register_controller/registerC.dart';
+import 'package:ilearn_project/controllers/register_controller/register_controller.dart';
 
 
 class Email extends StatelessWidget {
@@ -15,7 +15,7 @@ class Email extends StatelessWidget {
     Key? key,
   }) : super(key: key);
   static final _formKey = GlobalKey<FormState>();
-  static final registerC = Get.put(RegisterC());
+  static final registerC = Get.find<RegisterC>();
   @override
   Widget build(BuildContext context) {
     String? validateEmail(String value) {
@@ -46,6 +46,9 @@ class Email extends StatelessWidget {
             final result = validateEmail(value!);
             if (result != null) {
               return result; // Mengembalikan pesan kesalahan jika ada
+            }
+            if(registerC.isEmailValid == false) {
+              return 'Email already exist';
             }
           },
           onChanged: (value) {

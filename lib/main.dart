@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/bindings/loginB.dart';
+import 'package:ilearn_project/bindings/registerB.dart';
 import 'package:ilearn_project/pages/login_page/login.dart';
 import 'package:ilearn_project/pages/onboarding/onboard.dart';
 import 'package:ilearn_project/pages/profile_page/profile.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      home: OnBoarding(),
+      initialRoute: "/register",
+      initialBinding: RegisterB(),
     );
   }
 }

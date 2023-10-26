@@ -31,7 +31,7 @@ class RegisterC extends GetxController {
     isObsecure.value = !isObsecure.value;
   }
 
-  Future<String> createUser() async {
+  Future<String> createUserLogin() async {
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -42,6 +42,7 @@ class RegisterC extends GetxController {
       if (e.code == 'weak-password') {
         return "weak-password";
       } else if (e.code == 'email-already-in-use') {
+        isEmailValid.value = false;
         return "email-already-in-use";
       }
     } catch (e) {
