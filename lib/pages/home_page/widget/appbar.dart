@@ -8,7 +8,7 @@ class AppBarCustom extends StatelessWidget {
   const AppBarCustom({super.key});
 
   Widget profileImage() {
-    return ProfileImage();
+    return ImageProfile();
   }
 
   @override
