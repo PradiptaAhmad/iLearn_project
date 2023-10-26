@@ -11,7 +11,7 @@ class ButtonInputUser extends StatelessWidget {
     return ElevatedButton(
       onPressed: this.onPressed,
       style: ElevatedButton.styleFrom(
-        primary: primaryColor,
+        primary: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

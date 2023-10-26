@@ -9,6 +9,7 @@ const Color peachText = Color(0xFFBA5638);
 const Color header = Color(0xFFFBECE7);
 const Color notifUser = Color(0xFF66D225);
 const Color offCategory = Color(0xFFD9D9D9);
+const Color isError = Color.fromARGB(255, 255, 0, 0);
 
 //Font
 
@@ -146,3 +147,10 @@ TextStyle bottomTxtLogin({required final color}) {
           fontSize: figmaFontsize(14)));
 }
 
+TextStyle errorText({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(14)));
+}
