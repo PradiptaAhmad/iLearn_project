@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ilearn_project/bindings/loginB.dart';
 import 'package:ilearn_project/pages/login_page/login.dart';
 import 'package:ilearn_project/pages/onboarding/onboard.dart';
 import 'package:ilearn_project/pages/register_page/register.dart';
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
       ),
       getPages: AppPages.pages,
       home: OnBoarding(),
+      initialRoute: '/login',
+      initialBinding: LoginB(),
     );
   }
 }
