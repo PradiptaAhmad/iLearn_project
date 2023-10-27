@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/login_controller/loginPageController.dart';
+import 'package:ilearn_project/controllers/register_controller/registerC.dart';
 
-class PasswordFIeld extends StatelessWidget {
+class LastName extends StatelessWidget {
   final String label;
   final IconData icon;
   final TextInputType textInputType;
-  PasswordFIeld({
+
+  LastName({
     required this.label,
     required this.icon,
     required this.textInputType,
-  });
-
+    Key? key,
+  }) : super(key: key);
+  static final registerC = Get.put(RegisterC());
   @override
   Widget build(BuildContext context) {
-    // double screenWidth = MediaQuery.of(context).size.width;
-    // double screenHeight = MediaQuery.of(context).size.height;
-    Get.put(LoginPageController());
-    final loginPageC = Get.find<LoginPageController>();
     double screenWidth = MediaQuery.of(context).size.width;
-    // double screenHeight = MediaQuery.of(context).size.height;
-    
-    return Obx(() {
-
-
-      return Container(
-        width: screenWidth * 0.9,
-        child: TextField(
-          obscureText: loginPageC.isObsecure.value,
+    double screenHeight = MediaQuery.of(context).size.height;
+    return Container(
+      width: screenWidth * 0.9,
+      child: Form(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        child: TextFormField(
           keyboardType: textInputType,
+          onChanged: (value) {
+            if(value!.isNotEmpty){
+              registerC.last_name.value = value;
+            }
+          },
           style: TextStyle(
             color: Colors.black,
           ),
@@ -39,17 +39,6 @@ class PasswordFIeld extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide.none,
             ),
-            suffixIcon: IconButton(
-              onPressed: () {
-                print("this is clicked");
-                loginPageC.setObsecure();
-              },
-              icon: Icon(
-                loginPageC.isObsecure.value
-                    ? Icons.visibility_off
-                    : Icons.visibility,
-              ),
-            ),
             contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             prefixIcon: Icon(icon, color: Colors.black54),
             hintText: label,
@@ -58,7 +47,7 @@ class PasswordFIeld extends StatelessWidget {
             ),
           ),
         ),
-      );
-    });
+      ),
+    );
   }
 }

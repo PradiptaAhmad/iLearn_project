@@ -5,11 +5,16 @@ import 'package:ilearn_project/appBar/userpoint.dart';
 import '../core/themes.dart';
 
 class AppBarCustom extends StatelessWidget {
-  final String appBarText; // Add a parameter for the text
-  final bool showSearchBar; // Parameter untuk menentukan apakah menampilkan CustomSearchBar
+  final String appBarText;
+  final bool showSearchBar;
+  final Color textColor; // Add a parameter for the text color
 
-  const AppBarCustom({Key? key, required this.appBarText, this.showSearchBar = true})
-      : super(key: key);
+  const AppBarCustom({
+    Key? key,
+    required this.appBarText,
+    this.showSearchBar = true,
+    this.textColor = Colors.black, // Provide a default text color
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +28,15 @@ class AppBarCustom extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(Icons.arrow_back_ios_new_outlined),
-              Text(appBarText, style: titlePage()), // Use the parameter here
-              SizedBox(width: screenHeight*0.05, child: ProfileImage()),
+              Text(
+                appBarText,
+                style: titlePage().copyWith(color: textColor), // Apply the provided text color
+              ),
+              SizedBox(width: screenHeight * 0.05, child: ProfileImage()),
             ],
           ),
-          SizedBox(height: screenHeight*0.03),
-          if (showSearchBar) CustomSearchBar(), // Menampilkan CustomSearchBar sesuai kondisi
+          SizedBox(height: screenHeight * 0.03),
+          if (showSearchBar) CustomSearchBar(),
         ],
       ),
     );
