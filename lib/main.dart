@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/bindings/loginB.dart';
-import 'package:ilearn_project/pages/login_page/login.dart';
-import 'package:ilearn_project/pages/onboarding/onboard.dart';
-import 'package:ilearn_project/pages/profile_page/profile.dart';
+import 'package:ilearn_project/bindings/registerB.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
-import 'data/news.dart';
-import 'pages/home_page/home.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:ilearn_project/routes/route_name.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      home: ProfilePage(),
+      initialRoute: RouteName.register,
+      initialBinding: RegisterB(),
     );
   }
 }

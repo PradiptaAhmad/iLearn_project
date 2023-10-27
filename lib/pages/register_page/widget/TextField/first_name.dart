@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/register_controller/registerC.dart';
+import 'package:ilearn_project/controllers/register_controller/register_controller.dart';
 
 class FirstName extends StatelessWidget {
   final String label;
   final IconData icon;
   final TextInputType textInputType;
-
+  static final _formKey = GlobalKey<FormState>();
+  static final registerC = Get.find<RegisterC>();
+  
   FirstName({
     required this.label,
     required this.icon,
     required this.textInputType,
     Key? key,
   }) : super(key: key);
-  static final _formKey = GlobalKey<FormState>();
-  static final registerC = Get.put(RegisterC());
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
