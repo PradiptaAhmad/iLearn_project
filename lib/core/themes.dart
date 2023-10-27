@@ -154,3 +154,11 @@ TextStyle errorText({required final color}) {
           fontWeight: FontWeight.w400,
           fontSize: figmaFontsize(14)));
 }
+
+TextStyle txtprofile({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(18)));
+}
