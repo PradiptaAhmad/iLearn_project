@@ -24,11 +24,8 @@ class SplashController extends GetxController {
     print(isNotFirstTime);
 
     if (isNotFirstTime == null || isNotFirstTime == false) {
-      prefs.setBool("isNotFirstTime", true);
-      Future.delayed(Duration(seconds: 2), () {
-        delayed(() {
-          Get.offAllNamed(RouteName.onBoarding);
-        });
+      delayed(() {
+        Get.offAllNamed(RouteName.onBoarding);
       });
     } else if (isLogin == false || isLogin == null) {
       delayed(() {
