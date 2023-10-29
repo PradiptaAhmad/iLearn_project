@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ilearn_project/controllers/login_controller/loginPageController.dart';
 import 'package:ilearn_project/core/themes.dart';
+import 'package:ilearn_project/pages/login_page/data/login_data.dart';
 import 'package:ilearn_project/pages/login_page/widget/btn_forgot.dart';
-import 'package:ilearn_project/pages/login_page/widget/emailField.dart';
-import 'package:ilearn_project/pages/login_page/widget/passwordField.dart';
+import 'package:ilearn_project/pages/login_page/widget/loginButtonInput.dart';
+import 'package:ilearn_project/pages/login_page/widget/loginFormField.dart';
 import 'package:ilearn_project/pages/login_page/widget/text_or.dart';
 import 'package:ilearn_project/pages/login_page/widget/txtBtn_signup.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnLogo.dart';
@@ -10,6 +13,12 @@ import 'package:ilearn_project/pages/register_page/widget/btnLogo.dart';
 class Login extends StatelessWidget {
   const Login({super.key});
 
+  // keys validator
+  static final _emailFormKey = GlobalKey<FormState>();
+  static final _passwordFormKey = GlobalKey<FormState>();
+
+  // Getx Import
+  static final loginC = Get.find<LoginPageController>();
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -22,33 +31,70 @@ class Login extends StatelessWidget {
           child: Column(children: [
             SizedBox(height: screenHeight * 0.1),
             Image.asset(
-              "assets/images/login.png",
+              LoginData.HeadImage,
               height: screenHeight * 0.3,
               width: screenWidth * 0.8,
             ),
             SizedBox(height: 40),
             Text(
-              "Hi There!",
+              LoginData.HeadingText,
               style: onBoardTitle(),
             ),
             Text(
-              "Enter details below to continue",
+              LoginData.SubHeadingText,
               style: subHeaderCardHome(),
             ),
             SizedBox(
               height: 20,
             ),
-            EmailField(
-                label: "Email",
+            LoginFormField(
+                label: LoginData.EmailText,
+                keys: _emailFormKey,
                 icon: Icons.email,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (value) {
+                  if (_emailFormKey.currentState!.validate()) {
+                    loginC.email.value = value;
+                    loginC.isEmailValid.value = true;
+                  }
+                },
+                validatorForm: (value) {
+                  if (!loginC.emailRegex.hasMatch(value!)) {
+                    return LoginData.EmailInvalid;
+                  }
+                  return null;
+                },
                 textInputType: TextInputType.emailAddress),
             SizedBox(
               height: 10,
             ),
-            PasswordFIeld(
-                label: "Password",
+            Obx(() => LoginFormField(
+                label: LoginData.PasswordText,
+                keys: _passwordFormKey,
+                isObsecure: loginC.isObsecure.value,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (value) {
+                  if (_passwordFormKey.currentState!.validate()) {
+                    loginC.password.value = value;
+                    loginC.isPasswordValid.value = true;
+                  }
+                },
+                validatorForm: (value) {
+                  if (value!.length < 6) {
+                    return LoginData.PasswordInvalid;
+                  }
+                  return null;
+                },
                 icon: Icons.lock,
-                textInputType: TextInputType.visiblePassword),
+                iconButton: IconButton(
+                  onPressed: () {
+                    loginC.isObsecure.value = !loginC.isObsecure.value;
+                  },
+                  icon: loginC.isObsecure.value
+                      ? Icon(Icons.visibility_off)
+                      : Icon(Icons.visibility),
+                ),
+                textInputType: TextInputType.visiblePassword)),
             SizedBox(
               height: 5,
             ),
@@ -56,24 +102,20 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Container(
-              width: screenWidth * 0.9,
-              height: 43,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                child: Text("Login",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white)),
-              ),
-            ),
+            Obx(() => Container(
+                width: screenWidth * 0.9,
+                height: 43,
+                child: loginC.isAllValid() == false
+                    ? LoginButtonInput(
+                        onPressed: () {},
+                        color: inActiveColor,
+                        label: LoginData.LoginText,
+                      )
+                    : LoginButtonInput(
+                        onPressed: () {},
+                        color: primaryColor,
+                        label: LoginData.LoginText,
+                      ))),
             SizedBox(
               height: 10,
             ),
