@@ -56,6 +56,7 @@ class Login extends StatelessWidget {
                   if (_emailFormKey.currentState!.validate()) {
                     loginC.email.value = value;
                     loginC.isEmailValid.value = true;
+                    loginC.isEmailAndPasswordCorrect.value = true;
                   }
                 },
                 validatorForm: (value) {
@@ -77,6 +78,7 @@ class Login extends StatelessWidget {
                   if (_passwordFormKey.currentState!.validate()) {
                     loginC.password.value = value;
                     loginC.isPasswordValid.value = true;
+                    loginC.isEmailAndPasswordCorrect.value = true;
                   }
                 },
                 validatorForm: (value) {
@@ -102,6 +104,15 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+            Obx(() {
+              return Visibility(
+                visible: !loginC.isEmailAndPasswordCorrect.value,
+                child: Text(
+                  "Email Or Password Is Incorrect",
+                  style: errorText(color: isError),
+                ),
+              );
+            }),
             Obx(() => Container(
                 width: screenWidth * 0.9,
                 height: 43,
@@ -112,7 +123,10 @@ class Login extends StatelessWidget {
                         label: LoginData.LoginText,
                       )
                     : LoginButtonInput(
-                        onPressed: () {},
+                        onPressed: () {
+                          print("Login is clicked");
+                          loginC.userLogin();
+                        },
                         color: primaryColor,
                         label: LoginData.LoginText,
                       ))),

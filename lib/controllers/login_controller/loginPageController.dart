@@ -6,12 +6,6 @@ import 'package:ilearn_project/routes/route_name.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPageController extends GetxController {
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    writeToSharedPreference();
-    super.onInit();
-  }
   // variabel set obsecureText
   var isObsecure = true.obs;
 
@@ -22,6 +16,7 @@ class LoginPageController extends GetxController {
   // Validator variable
   var isEmailValid = false.obs;
   var isPasswordValid = false.obs;
+  var isEmailAndPasswordCorrect = true.obs;
 
   // Email RegExp
   final emailRegex = RegExp(
@@ -39,24 +34,28 @@ class LoginPageController extends GetxController {
     isObsecure.value = !isObsecure.value;
   }
 
-  Future<bool> userLogin() async {
+  Future<void> userLogin() async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: email.value, password: password.value);
           writeToSharedPreference();
           Get.offAllNamed(RouteName.home);
-    } on FirebaseException catch (e) {
-      if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      if (e.code == 'INVALID_LOGIN_CREDENTIALS') {
         print('No user found for that email.');
-        return false;
-      }
+        isEmailAndPasswordCorrect.value = false;
+        isEmailValid.value = false;
+        isPasswordValid.value = false;
+      } 
     }
-    return true;
   }
 
   Future<void> writeToSharedPreference() async {
     // Intialize SharedPreference
     final prefs = await SharedPreferences.getInstance();
     prefs.setBool("isLogin", true);
+    prefs.setString("email", email.value);
+    Get.offAllNamed(RouteName.home);
   }
 }

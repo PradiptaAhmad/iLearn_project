@@ -14,7 +14,7 @@ class LoginButtonInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         primary: color,
         shape: RoundedRectangleBorder(
