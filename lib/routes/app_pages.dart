@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:ilearn_project/bindings/loginB.dart';
+import 'package:ilearn_project/bindings/onBoardB.dart';
 import 'package:ilearn_project/bindings/registerB.dart';
 import 'package:ilearn_project/bindings/splashB.dart';
 import 'package:ilearn_project/pages/login_page/login.dart';
@@ -20,7 +21,7 @@ class AppPages {
       page: () => Register(),
       binding: RegisterB()
     ),
-    GetPage(name: RouteName.onBoarding, page: () => OnBoarding()),
+    GetPage(name: RouteName.onBoarding, page: () => OnBoarding(), binding: OnBoardB()),
     GetPage(name: RouteName.splash, page: () => SplashScreen(), binding: SplashB())
   ];
 }
