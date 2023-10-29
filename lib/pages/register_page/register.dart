@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/controllers/register_controller/register_controller.dart';
-import 'package:ilearn_project/pages/register_page/widget/TextField/email.dart';
-import 'package:ilearn_project/pages/register_page/widget/TextField/last_name.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnInput.dart';
+import 'package:ilearn_project/pages/register_page/widget/formTextField.dart';
 import 'package:ilearn_project/pages/register_page/widget/logo.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/pages/register_page/widget/checkbox.dart';
-import 'package:ilearn_project/pages/register_page/widget/TextField/password.dart';
-import 'package:ilearn_project/pages/register_page/widget/TextField/first_name.dart';
 
 class Register extends StatelessWidget {
   const Register({Key? key}); // Perbaikan pada constructor
+
+  // FormKey
+  static final _firstNameFormKey = GlobalKey<FormState>();
+  static final _lastNameFormKey = GlobalKey<FormState>();
+  static final _emailFormKey = GlobalKey<FormState>();
+  static final _passwordFormKey = GlobalKey<FormState>();
 
   static final registerC = Get.find<RegisterC>();
 
@@ -38,36 +41,98 @@ class Register extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 40),
-              FirstName(
+              FormTextField(
                 label: 'First Name',
                 icon: Icons.person,
                 textInputType: TextInputType.name,
+                keys: _firstNameFormKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (value) {
+                  if (_firstNameFormKey.currentState!.validate()) {
+                    registerC.first_name.value = value;
+                    registerC.isFirstNameValid.value = true;
+                  }
+                },
+                validatorForm: (value) {
+                  if (value!.isEmpty) {
+                    return "First Name Could Not Be Empty";
+                  }
+                  return null;
+                },
               ),
               SizedBox(
                 height: 15,
               ),
-              LastName(
+              FormTextField(
                 label: 'Last Name',
                 icon: Icons.person,
                 textInputType: TextInputType.name,
+                keys: _lastNameFormKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (value) {
+                  if (_lastNameFormKey.currentState!.validate()) {
+                    registerC.last_name.value = value;
+                  }
+                },
               ),
               SizedBox(
                 height: 15,
               ),
-              Email(
+              FormTextField(
                 label: 'Email',
                 icon: Icons.mail,
                 textInputType: TextInputType.emailAddress,
+                keys: _emailFormKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (value) {
+                  if (_emailFormKey.currentState!.validate()) {
+                    registerC.email.value = value;
+                    registerC.isEmailValid.value = true;
+                    registerC.isEmailUnique.value = true;
+                  }
+                },
+                validatorForm: (value) {
+                  final result = registerC.validateEmail(value!);
+                  if (result != null) {
+                    return result;
+                  }
+                  return null;
+                },
               ),
               SizedBox(
                 height: 15,
               ),
-              PasswordFIeld(
-                // Perbaikan pada nama komponen
-                label: "Password",
-                icon: Icons.lock,
-                textInputType: TextInputType.visiblePassword,
-              ),
+              Obx(() => FormTextField(
+                    // Perbaikan pada nama komponen
+                    label: "Password",
+                    icon: Icons.lock,
+                    isObsecure: registerC.isObsecure.value,
+                    textInputType: TextInputType.visiblePassword,
+                    keys: _passwordFormKey,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    onChanged: (value) {
+                      if (_passwordFormKey.currentState!.validate()) {
+                        registerC.password.value = value;
+                        registerC.isPasswordValid.value = true;
+                      }
+                    },
+                    validatorForm: (value) {
+                      if (value!.length < 6) {
+                        return "Password Must Be More Than 6 Characters";
+                      }
+                      return null;
+                    },
+                    iconButton: IconButton(
+                        onPressed: () {
+                          registerC.isObsecure.value =
+                              !registerC.isObsecure.value;
+                        },
+                        icon: Icon(
+                          registerC.isObsecure.value
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                        )),
+                  )),
               SizedBox(
                 height: 5,
               ),
@@ -83,7 +148,6 @@ class Register extends StatelessWidget {
                 );
               }),
 
-              
               Obx(() => registerC.isAllValid()
                   ? ButtonInputUser(
                       onPressed: () {
@@ -91,11 +155,7 @@ class Register extends StatelessWidget {
                       },
                       color: primaryColor,
                     )
-                  : ButtonInputUser(
-                      onPressed: () {
-                        
-                      },
-                      color: inActiveColor)),
+                  : ButtonInputUser(onPressed: () {}, color: inActiveColor)),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +166,9 @@ class Register extends StatelessWidget {
                     color: peachColor,
                   ),
                   SizedBox(width: 10),
-                  Text('or', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+                  Text('or',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
                   SizedBox(width: 10),
                   Container(
                     height: 2,
