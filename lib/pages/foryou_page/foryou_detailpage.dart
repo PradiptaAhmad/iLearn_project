@@ -13,10 +13,10 @@ class DetailForYou extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: SingleChildScrollView(
+      body: SafeArea(
         child: Column(
           children: [
-            AppBarCustom(textColor: Colors.black,showSearchBar: false, appBarText: 'Course Detail',),
+            AppBarCustom(textColor: Colors.black,showSearchBar: false, appBarText: 'Course Detail',showProfileImage: false),
             Image.asset("assets/images/laptop.png", width: screenWidth *0.89),
             SizedBox(height: screenHeight*0.04,),
             Padding(
@@ -55,12 +55,22 @@ class DetailForYou extends StatelessWidget {
                       ],
                   ),
                   Playlist(),
-                  // ButtonPrice()
                 ],
               ),
             )
           ],
         ),
+      ),
+      bottomSheet: BottomSheet(
+        onClosing: () {},
+        backgroundColor: Colors.white,
+        enableDrag: false,
+        builder: (context) {
+          return const SizedBox(
+            height: 80,
+            child: EnroollBottomSheet(),
+          );
+        },
       ),
     );
   }
