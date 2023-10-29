@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/bindings/registerB.dart';
-import 'package:ilearn_project/pages/home_page/home.dart';
+import 'package:ilearn_project/bindings/loginB.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
@@ -26,8 +25,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      initialRoute: RouteName.register,
-      initialBinding: RegisterB(),
+      initialRoute: RouteName.login,
+      initialBinding: LoginB(),
     );
   }
 }
