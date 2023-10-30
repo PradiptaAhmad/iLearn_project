@@ -1,8 +1,5 @@
-import 'dart:ffi';
-import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -23,6 +20,9 @@ class RegisterC extends GetxController {
   var isChecked = false.obs;
   var isEmailUnique = true.obs;
   
+  // formKey
+  static final formKey = GlobalKey<FormState>();
+  
   bool isAllValid() {
     if (isFirstNameValid.value == true &&
         isEmailValid.value == true &&
@@ -39,7 +39,6 @@ class RegisterC extends GetxController {
 
   Future<void> createUserLogin() async {
     try {
-      final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email.value,
         password: password.value,
@@ -51,7 +50,6 @@ class RegisterC extends GetxController {
       } else if (e.code == 'email-already-in-use') {
         isEmailUnique.value = false;
         isEmailValid.value = false;
-        exit(1);
       }
     } catch (e) {
       print(e);
@@ -71,5 +69,17 @@ class RegisterC extends GetxController {
     } catch (e) {
       print('Error adding data to Firestore: $e');
     }
+  }
+  String? validateEmail(String value) {
+    // Regular expression untuk memeriksa alamat email
+    final emailRegex = RegExp(
+      r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$',
+    );
+
+    if (!emailRegex.hasMatch(value)) {
+      return 'Please enter a valid email';
+    }
+
+    return null;
   }
 }

@@ -1,65 +1,78 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/routes/route_name.dart';
-import 'package:introduction_screen/introduction_screen.dart';
+import 'package:ilearn_project/controllers/onboarding_controller/onboarding_controller.dart';
+import 'package:ilearn_project/core/themes.dart';
+import 'package:ilearn_project/pages/onboarding/data/onBoardingData.dart';
+import 'package:ilearn_project/pages/onboarding/widget/endButton.dart';
+import 'package:ilearn_project/pages/onboarding/widget/onBoardWidget.dart';
 
-class OnBoarding extends StatefulWidget {
-  const OnBoarding({super.key});
+class OnBoarding extends StatelessWidget {
+  OnBoarding({super.key});
 
-  @override
-  State<OnBoarding> createState() => _OnBoardingState();
-}
-
-bool showBottomPart = true;
-
-class _OnBoardingState extends State<OnBoarding> {
+  // GetX State Management
+  final onBoardingC = Get.find<OnBoardingController>();
+  final PageController _pageController = PageController();
+  final List<Map<String, String>> onboardingData = OnBoardingData().dataArrays;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IntroductionScreen(
-        showBottomPart: showBottomPart,
-        showDoneButton: true,
-        showBackButton: false,
-        showNextButton: false,
-        pages: [
-          PageViewModel(
-            image: Image.asset("assets/images/reading.png"),
-            title: 'Kesusahan dalam belajar?',
-            body: 'ILearn memberikan kemudahan dalam belajar karena kamu bisa belajar dimanapun dan kapanpun ',
+      body: Column(
+        children: [
+          Expanded(
+            flex: 3,
+            child: PageView.builder(
+              controller: _pageController,
+              onPageChanged: (index) {
+                onBoardingC.currentPage.value = index;
+              },
+              itemCount: onboardingData.length,
+              itemBuilder: (context, index) {
+                return OnBoardWidget(
+                  image: onboardingData[index]['image']!,
+                  title: onboardingData[index]['title']!,
+                  description: onboardingData[index]['description']!,
+                );
+              },
+            ),
           ),
-          PageViewModel(
-            image: Image.asset("assets/images/laying.png"),
-            title: 'Materi yang beragam',
-            body: 'ILearn mempunyai beragam materi menarik yang bisa dipelajari dari sekarang ',
-          ),
-          PageViewModel(
-            image: Image.asset("assets/images/chilling.png"),
-            title: 'Harga terjangkau',
-            body: 'Kamu bisa menikmati fitur di [nama aplikasi] tanpa harus menyiksa dompetmu ',
-          ),
+          // Add pagination dots
+          Obx(() => Container(
+                margin: const EdgeInsets.only(
+                  top: 10,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    onboardingData.length,
+                    (index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(6.0),
+                        child: Container(
+                          width: 10,
+                          height: 10,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: onBoardingC.currentPage.value == index
+                                ? primaryColor // Active dot color
+                                : inActiveColor, // Inactive dot color
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              )),
+          Obx(() => onBoardingC.currentPage.value == 2
+              ? EndButton(
+                  onPressed: () {
+                    onBoardingC.switchToLoginPage();
+                  },
+                  color: primaryColor)
+              : SizedBox(
+                  height: 65,
+                ))
         ],
-        // back: Icon(Icons.arrow_back_ios_rounded),
-        // next: Icon(Icons.navigate_next),
-        done: ElevatedButton(
-            onPressed: () {
-              Get.toNamed(RouteName.login);
-              setState(() {
-                showBottomPart =
-                    false; // Sembunyikan bagian bawah setelah "Get Started" ditekan
-              });
-            },
-            child: Text("Get Started")),
-        onDone: () {
-          
-        },
       ),
-      // bottomNavigationBar: Container(
-      //   alignment: Alignment.bottomCenter,
-      //   child: ElevatedButton(
-      //     onPressed: () {},
-      //     child: Text("Get Started"),
-      //   ),
-      // ),
     );
   }
 }
