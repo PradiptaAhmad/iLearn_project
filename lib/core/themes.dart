@@ -219,4 +219,12 @@ TextStyle btnBuy({required final color}) {
           fontSize: figmaFontsize(22)));
 }
 
+TextStyle txtDetailCourse({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w600,
+          fontSize: figmaFontsize(16)));
+}
+
 

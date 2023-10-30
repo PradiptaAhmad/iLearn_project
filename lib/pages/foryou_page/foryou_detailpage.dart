@@ -17,7 +17,24 @@ class DetailForYou extends StatelessWidget {
         child: Column(
           children: [
             AppBarCustom(textColor: Colors.black,showSearchBar: false, appBarText: 'Course Detail',showProfileImage: false),
-            Image.asset("assets/images/laptop.png", width: screenWidth *0.89),
+            Ink.image(
+              image: AssetImage("assets/images/laptop.png"),
+              width: screenWidth * 0.89,
+              height: screenHeight * 0.22,
+              fit: BoxFit.cover,
+              child: InkWell(
+                onTap: () {
+                  // Handle navigation when the image is tapped
+                },
+                child: Center(
+                  child: Icon(
+                    Icons.play_circle,
+                    size: 45, // Adjust the size as needed
+                    color: primaryColor, // Customize the color
+                  ),
+                ),
+              ),
+            ),
             SizedBox(height: screenHeight*0.04,),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.02),
@@ -74,4 +91,5 @@ class DetailForYou extends StatelessWidget {
       ),
     );
   }
+
 }
