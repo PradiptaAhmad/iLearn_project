@@ -33,7 +33,7 @@ class DetailMyCourses extends StatelessWidget {
                 child: Icon(
                   Icons.play_circle,
                   size: 45, // Adjust the size as needed
-                  color: primaryColor, // Customize the color
+                  color: Colors.white, // Customize the color
                 ),
               ),
             ),

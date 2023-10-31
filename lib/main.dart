@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       // getPages: AppPages.pages,
       // initialRoute: RouteName.register,
       // initialBinding: RegisterB(),
-      home: DetailMyCourses(),
+      home: ForYou(),
     );
   }
 }
