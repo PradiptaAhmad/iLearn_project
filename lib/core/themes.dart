@@ -233,14 +233,16 @@ TextStyle descMyCourses({required final Color color}) {
       textStyle: TextStyle(
           color: semiTransparentColor,
           fontWeight: FontWeight.w400,
-          fontSize: figmaFontsize(10)));
+          fontSize: figmaFontsize(11),
+           height: 1.25,
+      ));
 }
 
 TextStyle decsCourses({required final Color color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
           fontWeight: FontWeight.w400,
-          fontSize: figmaFontsize(12)));
+          fontSize: figmaFontsize(11)));
 }
 
 
