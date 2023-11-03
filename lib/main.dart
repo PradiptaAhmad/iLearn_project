@@ -6,7 +6,6 @@ import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
 import 'firebase_options.dart';
-import 'pages/mycourses_page/mycourses.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,9 +27,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: ForYou(),
-      // getPages: AppPages.pages,
-      // initialRoute: RouteName.splash,
-      // initialBinding: SplashB(),
+      getPages: AppPages.pages,
+      initialRoute: RouteName.splash,
+      initialBinding: SplashB(),
     );
   }
 }
