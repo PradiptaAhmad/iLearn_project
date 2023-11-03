@@ -4,10 +4,12 @@ import 'package:ilearn_project/bindings/registerB.dart';
 import 'package:ilearn_project/pages/foryou_page/foryou.dart';
 import 'package:ilearn_project/pages/foryou_page/foryou_detailpage.dart';
 import 'package:ilearn_project/pages/home_page/home.dart';
+import 'package:ilearn_project/pages/home_page/widget/mycourses_card.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
 import 'firebase_options.dart';
+import 'pages/mycourses_page/mycourses.dart';
 import 'pages/mycourses_page/mycourses_detailpage.dart';
 
 void main() async {
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
       // getPages: AppPages.pages,
       // initialRoute: RouteName.register,
       // initialBinding: RegisterB(),
-      home: ForYou(),
+      home: MyCoursesPage(),
     );
   }
 }

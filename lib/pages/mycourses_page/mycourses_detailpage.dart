@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ilearn_project/pages/mycourses_page/widget/playlistmycourse.dart';
+import 'package:ilearn_project/pages/mycourses_page/widget/playlistdetailmycourse.dart';
 
 import '../../appBar/appbarcustom.dart';
 import '../../core/themes.dart';

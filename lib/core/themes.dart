@@ -227,4 +227,21 @@ TextStyle txtDetailCourse({required final color}) {
           fontSize: figmaFontsize(16)));
 }
 
+TextStyle descMyCourses({required final Color color}) {
+  Color semiTransparentColor = color.withOpacity(0.7); // Mengubah warna menjadi 70% lebih transparan
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: semiTransparentColor,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(10)));
+}
+
+TextStyle decsCourses({required final Color color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(12)));
+}
+
+
 
