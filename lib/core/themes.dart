@@ -219,4 +219,31 @@ TextStyle btnBuy({required final color}) {
           fontSize: figmaFontsize(22)));
 }
 
+TextStyle txtDetailCourse({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w600,
+          fontSize: figmaFontsize(16)));
+}
+
+TextStyle descMyCourses({required final Color color}) {
+  Color semiTransparentColor = color.withOpacity(0.7); // Mengubah warna menjadi 70% lebih transparan
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: semiTransparentColor,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(11),
+           height: 1.25,
+      ));
+}
+
+TextStyle decsCourses({required final Color color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(11)));
+}
+
+
 

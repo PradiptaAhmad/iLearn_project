@@ -31,8 +31,7 @@ class AppBarCustom extends StatelessWidget {
             children: [
               Icon(Icons.arrow_back_ios_new_outlined),
               Expanded(
-                child: Align(
-                  alignment: Alignment.centerLeft,
+                child: Center(
                   child: Text(
                     appBarText,
                     style: titlePage().copyWith(color: textColor),
