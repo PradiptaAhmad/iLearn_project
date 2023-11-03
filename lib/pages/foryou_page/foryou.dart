@@ -17,7 +17,7 @@ class ForYou extends StatelessWidget {
           AppBarCustom(appBarText: 'For You',),
           SizedBox(height:screenHeight*0.003 ,),
           Category(),
-          ForYouCard()
+          // ForYouCard()
         ],
       ),
     );
