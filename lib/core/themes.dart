@@ -162,3 +162,88 @@ TextStyle txtprofile({required final color}) {
           fontWeight: FontWeight.w400,
           fontSize: figmaFontsize(18)));
 }
+
+TextStyle titleForYou({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(23)));
+}
+
+TextStyle descForYou({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(14)));
+}
+
+TextStyle txtIconForYouDetail({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w500,
+          fontSize: figmaFontsize(14)));
+}
+
+TextStyle titlePlaylist({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w500,
+          fontSize: figmaFontsize(16)));
+}
+
+TextStyle descPlaylist({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(12)));
+}
+
+TextStyle txtPrice({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w500,
+          fontSize: figmaFontsize(20)));
+}
+
+TextStyle btnBuy({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w600,
+          fontSize: figmaFontsize(22)));
+}
+
+TextStyle txtDetailCourse({required final color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: color,
+          fontWeight: FontWeight.w600,
+          fontSize: figmaFontsize(16)));
+}
+
+TextStyle descMyCourses({required final Color color}) {
+  Color semiTransparentColor = color.withOpacity(0.7); // Mengubah warna menjadi 70% lebih transparan
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: semiTransparentColor,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(11),
+           height: 1.25,
+      ));
+}
+
+TextStyle decsCourses({required final Color color}) {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(11)));
+}
+
+
+

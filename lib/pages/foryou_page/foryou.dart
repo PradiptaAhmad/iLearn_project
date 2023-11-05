@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ilearn_project/pages/foryou_page/widget/foryou_card.dart';
+import 'package:ilearn_project/pages/foryou_page/widget/foryoucard.dart';
 import 'package:ilearn_project/pages/home_page/widget/category.dart';
 
 import '../../appBar/appbarcustom.dart';

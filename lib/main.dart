@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/bindings/splashB.dart';
+import 'package:ilearn_project/pages/foryou_page/foryou.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
 import 'firebase_options.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      home: ForYou(),
       getPages: AppPages.pages,
       initialRoute: RouteName.homepage,
       // initialBinding: SplashB(),

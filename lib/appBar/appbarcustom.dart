@@ -7,13 +7,15 @@ import '../core/themes.dart';
 class AppBarCustom extends StatelessWidget {
   final String appBarText;
   final bool showSearchBar;
-  final Color textColor; // Add a parameter for the text color
+  final Color textColor;
+  final bool showProfileImage;
 
   const AppBarCustom({
     Key? key,
     required this.appBarText,
     this.showSearchBar = true,
-    this.textColor = Colors.black, // Provide a default text color
+    this.textColor = Colors.black,
+    this.showProfileImage = true,
   }) : super(key: key);
 
   @override
@@ -28,11 +30,15 @@ class AppBarCustom extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(Icons.arrow_back_ios_new_outlined),
-              Text(
-                appBarText,
-                style: titlePage().copyWith(color: textColor), // Apply the provided text color
+              Expanded(
+                child: Center(
+                  child: Text(
+                    appBarText,
+                    style: titlePage().copyWith(color: textColor),
+                  ),
+                ),
               ),
-              SizedBox(width: screenHeight * 0.05, child: ProfileImage()),
+              if (showProfileImage) SizedBox(width: screenHeight * 0.05, child: ProfileImage()),
             ],
           ),
           SizedBox(height: screenHeight * 0.03),
