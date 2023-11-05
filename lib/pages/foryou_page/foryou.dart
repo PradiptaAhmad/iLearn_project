@@ -14,10 +14,14 @@ class ForYou extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          AppBarCustom(appBarText: 'For You',),
-          SizedBox(height:screenHeight*0.003 ,),
+          AppBarCustom(
+            appBarText: 'For You',
+          ),
+          SizedBox(
+            height: screenHeight * 0.003,
+          ),
           Category(),
-          // ForYouCard()
+          ForYouCard()
         ],
       ),
     );
