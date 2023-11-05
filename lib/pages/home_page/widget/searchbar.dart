@@ -27,7 +27,7 @@ class SearchWidget extends StatelessWidget {
             fillColor: Color(0xFFFEFDFD),
             suffixIcon: Icon(Icons.sort, color: Colors.black),
             hintStyle: new TextStyle(color: Color(0xFFd0cece), fontSize: 16),
-            hintText: "What would you like to buy?",
+            hintText: "What would you like to learn?",
           ),
         ),
       ),

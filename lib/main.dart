@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      initialRoute: RouteName.splash,
-      initialBinding: SplashB(),
+      initialRoute: RouteName.homepage,
+      // initialBinding: SplashB(),
     );
   }
 }
