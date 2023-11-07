@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: NewsPage(listNews: news,),
+      home: DetailNewsPage(),
       // getPages: AppPages.pages,
       // initialRoute: RouteName.splash,
       // initialBinding: SplashB(),
