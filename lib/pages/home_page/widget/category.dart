@@ -13,7 +13,7 @@ class Category extends StatelessWidget {
         children: [
           for (int i = 1; i < 8; i++)
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 3, vertical: 5),
+              margin: EdgeInsets.only(left: 12, top: 5),
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               decoration: BoxDecoration(
                 color: Colors.white,

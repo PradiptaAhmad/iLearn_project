@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ForYou(),
       getPages: AppPages.pages,
       initialRoute: RouteName.homepage,
       // initialBinding: SplashB(),

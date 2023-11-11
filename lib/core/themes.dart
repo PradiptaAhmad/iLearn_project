@@ -10,7 +10,8 @@ const Color header = Color(0xFFFBECE7);
 const Color notifUser = Color(0xFF66D225);
 const Color offCategory = Color(0xFFD9D9D9);
 const Color isError = Color.fromARGB(255, 255, 0, 0);
-
+const Color black = Color(0xFF1F1D2B);
+const Color pinkMuda = Color(0xFFFFECE4);
 //Font
 
 figmaFontsize(int fontSize) {
@@ -55,15 +56,15 @@ TextStyle headerCardHome() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
           fontWeight: FontWeight.w600,
-          fontSize: figmaFontsize(16)));
+          fontSize: figmaFontsize(18)));
 }
 
 TextStyle subHeaderCardHome() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-        color: Color(0xFF1F1D2B),
+          color: primaryColor,
           fontWeight: FontWeight.w500,
-          fontSize: figmaFontsize(12)));
+          fontSize: figmaFontsize(14)));
 }
 
 TextStyle btnTime() {

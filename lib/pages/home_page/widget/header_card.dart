@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/themes.dart';
 
 class HeaderCard extends StatelessWidget {
@@ -7,52 +6,80 @@ class HeaderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Container(
-      width: screenWidth * 0.40,
-      decoration: BoxDecoration(
-        color: Color(0xFFFFD1AD),
-        borderRadius: BorderRadius.circular(20.0), // Atur nilai sesuai kebutuhan Anda
-      ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Tips Coding", style: headerCardHome(),),
-                Text("10 Exercies", style: subHeaderCardHome(),),
-                SizedBox(height: 20,),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Container(
-                    width: screenWidth *0.19,
-                    height: screenHeight* 0.02,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "30 Minutes",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 11
-                      ),
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white, // Warna latar belakang putih
-                    padding: EdgeInsets.all(0), // Menghilangkan padding bawaan
-                  ),
-                )
-              ],
+    return ListView.builder(
+        itemCount: 4,
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, index) {
+          return Container(
+            width: screenWidth * 0.8,
+            margin: EdgeInsets.only(left: 15),
+            decoration: BoxDecoration(
+              color: Color(0xFFFFD1AD),
+              borderRadius: BorderRadius.circular(
+                  20.0), // Atur nilai sesuai kebutuhan Anda
             ),
-          ),
-          Image.asset("assets/images/headercard.png", width: 158, height: 300,)
-        ],
-      ),
+            child: Container(
+              margin: EdgeInsets.only(left: 10, top: 10),
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: screenWidth * 0.4,
+                        margin: EdgeInsets.only(top: 10, left: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Dirumah Aja?",
+                              style: headerCardHome(),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "walaupun rebahan kamu masih bisa produktif dengan ILearn",
+                              style: subHeaderCardHome(),
+                            ),
+                          ],
+                        ),
+                      ),
+        
+                      SizedBox(
+                        height: 20,
+                  ),
+                      // InkWell(
+                      //   onTap: () {},
+                      //   child: Container(
+                      //     width: ,
+                      //     height: 30,
+                      //     alignment: Alignment.center,
+                      //     decoration: BoxDecoration(color: Colors.white),
+                      //     child: Text(
+                      //       "30 Minutes",
+                      //       style: TextStyle(
+                      //         color: Colors.black,
+                      //         fontWeight: FontWeight.w600,
+                      //         fontSize: 11
+                      //       ),
+                      //     ),
+                      //   ),
+                      // )
+                    ],
+                  ),
+                  Image.asset(
+                    "assets/images/cardheader.png",
+                    scale: 0.1,
+                  )
+                ],
+              ),
+            ),
+          );
+        }
     );
   }
 }
