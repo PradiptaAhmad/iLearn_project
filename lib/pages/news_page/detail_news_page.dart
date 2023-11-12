@@ -31,6 +31,7 @@ class DetailNewsPage extends StatelessWidget {
                 children: [
                   Image.asset(
                     "assets/news/android13.png",
+                    width: screenWidth,
                     height: 220, // You can adjust the height as needed
                     fit: BoxFit.cover,
                   ),

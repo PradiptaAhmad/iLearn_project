@@ -3,11 +3,14 @@ import 'package:get/get.dart';
 import 'package:ilearn_project/bindings/splashB.dart';
 import 'package:ilearn_project/data/news.dart';
 import 'package:ilearn_project/pages/foryou_page/foryou.dart';
+import 'package:ilearn_project/pages/home_page/home.dart';
 import 'package:ilearn_project/pages/news_page/detail_news_page.dart';
 import 'package:ilearn_project/pages/news_page/news_page.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
+import 'bindings/registerB.dart';
+import 'core/navbar/bottomnavbar.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -29,11 +32,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: DetailNewsPage(),
-      // getPages: AppPages.pages,
+      home: Navbar(),
+      getPages: AppPages.pages,
       // initialRoute: RouteName.splash,
       // initialBinding: SplashB(),
     );
   }
 }
+
+
+
+
+
 
