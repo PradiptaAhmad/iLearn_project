@@ -14,7 +14,7 @@ class ImageProfile extends StatelessWidget {
       child: Stack(
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage('assets/images/avatar.png') as ImageProvider<Object>,
+            backgroundImage: AssetImage('assets/images/avatar.png'),
           ),
           Positioned(
             bottom: screenHeight * 0.012,

@@ -32,9 +32,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Navbar(),
       getPages: AppPages.pages,
-      // initialRoute: RouteName.splash,
+      initialRoute: RouteName.homepage,
       // initialBinding: SplashB(),
     );
   }
