@@ -22,8 +22,8 @@ class AppBarCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+    return Container(
+      margin: EdgeInsets.only(top: screenHeight * 0.05, left: 16),
       child: Column(
         children: [
           Row(

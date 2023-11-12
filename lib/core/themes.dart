@@ -12,6 +12,7 @@ const Color offCategory = Color(0xFFD9D9D9);
 const Color isError = Color.fromARGB(255, 255, 0, 0);
 const Color black = Color(0xFF1F1D2B);
 const Color pinkMuda = Color(0xFFFFECE4);
+const Color darkGrey = Color.fromARGB(255, 68, 68, 68);
 //Font
 
 figmaFontsize(int fontSize) {
