@@ -12,6 +12,9 @@ import 'package:ilearn_project/pages/splash_screen/splash.dart';
 import 'package:ilearn_project/routes/route_name.dart';
 
 import '../data/news.dart';
+import '../pages/mycourses_page/mycourses.dart';
+import '../pages/news_page/news_page.dart';
+import '../pages/profile_page/profile.dart';
 
 class AppPages {
   static final pages = [
@@ -33,8 +36,21 @@ class AppPages {
         name: RouteName.splash,
         page: () => SplashScreen(),
         binding: SplashB()),
-    GetPage(name: RouteName.home, page: () => HomePage()),
-
+    GetPage(
+        name: RouteName.home,
+        page: () => HomePage(),
+    ),
+    GetPage(
+        name: RouteName.courses,
+        page: () => MyCoursesPage()),
+    GetPage(
+        name: RouteName.news,
+        page: () => NewsPage(listNews: [],)),
+    GetPage(name: RouteName.detailNews,
+        page: () => DetailNewsPage()),
+    GetPage(
+        name: RouteName.profile,
+        page: () => ProfilePage()),
 
   ];
 }
