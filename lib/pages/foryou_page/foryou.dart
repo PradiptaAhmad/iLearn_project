@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/appBar/searchbar.dart';
 import 'package:ilearn_project/core/themes.dart';
-
-import '../../appBar/appbarcustom.dart';
+import 'package:ilearn_project/pages/foryou_page/widget/foryou_appbar.dart';
 
 class ForYou extends StatelessWidget {
   const ForYou({super.key});
@@ -13,13 +12,9 @@ class ForYou extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading:
-            IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios_new)),
-        title: Text("For You", style: titlePage()),
-        centerTitle: true,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: ForyouAppbar(),
       ),
       body: SingleChildScrollView(
         child: Container(
