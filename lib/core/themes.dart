@@ -140,6 +140,29 @@ TextStyle subTitleNews() {
           fontSize: figmaFontsize(14)));
 }
 
+TextStyle titleNewsCard() {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: figmaFontsize(16)));
+}
+
+TextStyle dateNewsCard() {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(11)));
+}
+
+TextStyle iconBtnNews() {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(11)));
+}
+
+
+
 TextStyle bottomTxtLogin({required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(

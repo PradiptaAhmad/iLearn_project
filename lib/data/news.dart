@@ -21,7 +21,7 @@ class News {
 List<News> news = [
   News(name: "Google Luncurkan Versi Terbaru Android 13",
       duration: "5min",
-      image: "assets/news/ios13.jpg",
+      image: "assets/news/android13.png",
       description: "Google meluncurkan versi terbaru Android 13 pada tanggal 25 Oktober 2023. Versi ini memiliki berbagai fitur baru, seperti peningkatan performa, keamanan, dan privasi. Salah satu fitur baru yang paling menonjol adalah fitur privasi yang lebih ketat, seperti izin kamera dan mikrofon yang harus disetujui secara manual oleh pengguna.",
       date: "25 Oktober 2023",
       category: "Pemrograman",
@@ -78,3 +78,52 @@ List<News> news = [
 
 
 ];
+
+List<News> trendingNews = [
+  News(
+    name: "Apple Merilis iPhone 14 Pro Max",
+    duration: "8min",
+    image: "assets/news/iphone14.jpg",
+    description: "Apple resmi merilis iPhone 14 Pro Max dengan berbagai fitur baru. Ponsel ini dilengkapi dengan kamera canggih, layar ProMotion 120Hz, dan performa yang ditingkatkan.",
+    date: "3 November 2023",
+    category: "Teknologi",
+    views: 4500,
+  ),
+  News(
+    name: "Peneliti Temukan Planet Baru Mirip Bumi",
+    duration: "6min",
+    image: "assets/news/exoplanet.jpeg",
+    description: "Sebuah tim peneliti telah menemukan planet ekstrasolar (exoplanet) yang memiliki kemiripan dengan Bumi. Penemuan ini menarik perhatian ilmuwan dan astronom di seluruh dunia.",
+    date: "4 November 2023",
+    category: "Astronomi",
+    views: 3200,
+  ),
+  News(
+    name: "Peluncuran Teleskop Luar Angkasa James Webb",
+    duration: "9min",
+    image: "assets/news/jamesweb.jpeg",
+    description: "NASA bersiap untuk meluncurkan Teleskop Luar Angkasa James Webb, yang dianggap sebagai pencapaian luar biasa dalam bidang astronomi dan penelitian luar angkasa.",
+    date: "5 November 2023",
+    category: "Astronomi",
+    views: 5800,
+  ),
+  News(
+    name: "Peluncuran Game Terbaru: Cyberverse Online",
+    duration: "7min",
+    image: "assets/news/cyberverse.jpeg",
+    description: "Game online terbaru, Cyberverse Online, akan segera diluncurkan. Game ini menawarkan pengalaman bermain yang mendalam dalam dunia virtual yang penuh petualangan.",
+    date: "6 November 2023",
+    category: "Gaming",
+    views: 3900,
+  ),
+  News(
+    name: "Vaksinasi COVID-19 Terus Berlangsung",
+    duration: "5min",
+    image: "assets/news/vaccinee.jpeg",
+    description: "Upaya vaksinasi COVID-19 terus berlanjut di seluruh dunia. Banyak negara bekerja keras untuk memvaksinasi penduduknya guna mengendalikan penyebaran virus.",
+    date: "7 November 2023",
+    category: "Kesehatan",
+    views: 7100,
+  ),
+];
+
