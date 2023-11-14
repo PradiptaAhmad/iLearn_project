@@ -5,6 +5,7 @@ abstract class RouteName {
   static const String onBoarding = '/onboarding';
   static const String splash = '/splash';
   static const String homepage = '/homepage';
+  static const String detail_course = '/detailcourse';
   static const String courses = '/mycourses';
   static const String news = '/news';
   static const String detailNews = '/detailnews';

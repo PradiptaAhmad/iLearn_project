@@ -14,7 +14,7 @@ class ForYou extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: screenHeight * 0.25,
       child: FutureBuilder<List<CourseModel>>(
@@ -29,69 +29,76 @@ class ForYou extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int i) {
                 CourseModel course = courses[i];
-                return Container(
-                  width: 210,
-                  height: 210,
-                  margin: EdgeInsets.only(left: 12, bottom: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: screenHeight * 0.008,
-                        offset: Offset(0, screenHeight * 0.004),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 108,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10)),
-                          image: DecorationImage(
-                              image: NetworkImage(course.banner!),
-                              fit: BoxFit.cover),
+                return GestureDetector(
+                  onTap: () => Get.toNamed("/detailcourse", arguments: courses[i]),
+                  child: Container(
+                    width: screenHeight * 0.25,
+                    height: 210,
+                    margin: EdgeInsets.only(left: 12, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: screenHeight * 0.008,
+                          offset: Offset(0, screenHeight * 0.004),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 10, top: 5),
-                        child: Text(
-                          course.title!,
-                          style: titleCard(),
-                        ),
-                      ),
-                      // Container(
-                      //   alignment: Alignment.topLeft,
-                      //   margin: EdgeInsets.only(left: 10, top: 5),
-                      //   child: Text(
-                      //     course.description!,
-                      //     style: subTitleCard(),
-                      //   ),
-                      // ),
-                      Spacer(),
-                      Container(
-                        margin: EdgeInsets.only(left: 12, bottom: 5),
-                        child: Text(
-                          "Rp. $course.price",
-                          style: GoogleFonts.poppins(
-                            color: darkGrey,
-                            fontSize: 11,
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 108,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10)),
+                            image: DecorationImage(
+                                image: NetworkImage(course.banner!),
+                                fit: BoxFit.cover),
                           ),
                         ),
-                      )
-                    ],
+                        Container(
+                          margin: EdgeInsets.only(left: 10, top: 5, right: 5),
+                          child: Text(
+                            course.title!,
+                            style: titleCard(),
+                          ),
+                        ),
+                        // Container(
+                        //   alignment: Alignment.topLeft,
+                        //   margin: EdgeInsets.only(left: 10, top: 5),
+                        //   child: Text(
+                        //     course.description!,
+                        //     style: subTitleCard(),
+                        //   ),
+                        // ),
+                        Spacer(),
+                        Container(
+                          margin: EdgeInsets.only(left: 12, bottom: 5),
+                          child: Text(
+                            "Rp. ${course.price}",
+                            style: GoogleFonts.poppins(
+                              color: darkGrey,
+                              fontSize: 11,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 );
               },
             );
+          } else if(snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           } else {
             return Center(
-              child: Text("Cannot load data"),
+              child: Text("Cannot load data from server"),
             );
           }
         },
