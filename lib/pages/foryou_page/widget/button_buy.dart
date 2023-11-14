@@ -25,7 +25,7 @@ class EnroollBottomSheet extends StatelessWidget {
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: primaryColor,
+              backgroundColor: primaryColor,
               minimumSize: Size(126, 50),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(0.0), // Set radius to 0.0

@@ -270,5 +270,11 @@ TextStyle decsCourses({required final Color color}) {
           fontSize: figmaFontsize(11)));
 }
 
-
+TextStyle priceCourses() {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+    color: darkGrey,
+    fontSize: 11,
+  ));
+}
 

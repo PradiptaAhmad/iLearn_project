@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ilearn_project/pages/news_page/widget/detail_card_news.dart';
 
-import '../../core/themes.dart';
-import '../../data/news.dart';
 
 class DetailNewsPage extends StatelessWidget {
   // final List<News> listNews;
