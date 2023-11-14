@@ -5,7 +5,6 @@ import 'package:ilearn_project/core/themes.dart';
 import '../../../data/news.dart';
 import '../../../routes/route_name.dart';
 import 'btnIconNews.dart';
-import 'package:ilearn_project/pages/news_page/detail_news_page.dart';
 
 class CardNewsPage extends StatelessWidget {
   final List<News> listNews;

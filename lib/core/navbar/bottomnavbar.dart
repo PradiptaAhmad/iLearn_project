@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ilearn_project/pages/home_page/home.dart';
-import 'package:ilearn_project/pages/home_page/widget/mycourses_card.dart';
 import 'package:ilearn_project/pages/news_page/news_page.dart';
 import 'package:ilearn_project/pages/profile_page/profile.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';

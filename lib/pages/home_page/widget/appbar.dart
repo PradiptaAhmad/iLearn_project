@@ -29,8 +29,7 @@ class AppBarCustom extends StatelessWidget {
             alignment: Alignment.bottomRight,
             children: [
               CircleAvatar(
-                backgroundImage: AssetImage("assets/images/avatar.png")
-                as ImageProvider<Object>,
+                backgroundImage: AssetImage("assets/images/avatar.png"),
               ),
               Positioned(
                 bottom: 0,

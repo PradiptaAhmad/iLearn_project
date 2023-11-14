@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ilearn_project/bindings/foryouB.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       getPages: AppPages.pages,
       initialRoute: RouteName.foryou,
-      // initialBinding: SplashB(),
+      initialBinding: ForyouB(),
     );
   }
 }

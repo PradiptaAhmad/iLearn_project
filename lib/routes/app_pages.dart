@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:ilearn_project/bindings/foryouB.dart';
 import 'package:ilearn_project/bindings/homepageB.dart';
 import 'package:ilearn_project/bindings/loginB.dart';
 import 'package:ilearn_project/bindings/onBoardB.dart';
@@ -54,6 +55,8 @@ class AppPages {
         page: () => ProfilePage()),
     GetPage(
         name: RouteName.foryou,
-        page: () => ForYou()),
+        page: () => ForYou(),
+        binding: ForyouB(),
+    ),
   ];
 }

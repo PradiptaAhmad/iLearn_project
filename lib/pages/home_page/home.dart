@@ -41,8 +41,7 @@ class HomePage extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(right: 12, top: 50),
                       child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/avatar.png")
-                            as ImageProvider<Object>,
+                        backgroundImage: AssetImage("assets/images/avatar.png"),
                       ),
                     )
                   ]),
