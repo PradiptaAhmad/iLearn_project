@@ -58,5 +58,6 @@ class AppPages {
         page: () => ForYou(),
         binding: ForyouB(),
     ),
+    // GetPage(name: RouteName.detail_course, page: ())
   ];
 }
