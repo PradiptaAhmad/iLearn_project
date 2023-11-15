@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ilearn_project/pages/home_page/home.dart';
-import 'package:ilearn_project/pages/news_page/news_page.dart';
-import 'package:ilearn_project/pages/profile_page/profile.dart';
+import 'package:ilearn_project/pages/home_page/view/home.dart';
+import 'package:ilearn_project/pages/news_page/view/news_page.dart';
+import 'package:ilearn_project/pages/profile_page/view/profile.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-import '../../pages/mycourses_page/mycourses.dart';
+import '../../pages/mycourses_page/view/mycourses.dart';
 import '../themes.dart';
 
 class Navbar extends StatelessWidget {
@@ -34,14 +34,14 @@ class Navbar extends StatelessWidget {
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(Icons.fastfood),
-          title: ("Menu"),
+          icon: Icon(Icons.book_outlined),
+          title: ("My Courses"),
           activeColorPrimary: primaryColor,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(Icons.history_edu),
-          title: ("History"),
+          icon: Icon(Icons.newspaper),
+          title: ("News"),
           activeColorPrimary: primaryColor,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),

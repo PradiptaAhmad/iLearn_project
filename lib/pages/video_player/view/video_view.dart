@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/video_controller/VideoController.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+import '../video_controller/VideoController.dart';
 
 class VideoView extends StatelessWidget {
   // final videoController = Get.find<VideoController>();

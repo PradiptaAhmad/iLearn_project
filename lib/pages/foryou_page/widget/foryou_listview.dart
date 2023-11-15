@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/foryou_controller/foryou_controller.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/models/course_model.dart';
+
+import '../foryou_controller/foryou_controller.dart';
 
 class ForyouList extends StatelessWidget {
   final foryouC = Get.find<ForyouController>();

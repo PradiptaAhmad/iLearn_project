@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/register_controller/register_controller.dart';
+
+import '../register_controller/register_controller.dart';
 
 class CheckboxWidget extends StatelessWidget {
   static final registerC = Get.put(RegisterC());

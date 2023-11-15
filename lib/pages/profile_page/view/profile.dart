@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ilearn_project/pages/profile_page/widget/items.dart';
 import 'package:ilearn_project/pages/profile_page/widget/pointuser.dart';
 
-import '../../appBar/appbarcustom.dart';
+import '../../../core/appBar/appbarcustom.dart';
+
 
 
 class ProfilePage extends StatelessWidget {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ilearn_project/appBar/searchbar.dart';
-import 'package:ilearn_project/appBar/userpoint.dart';
+import 'package:ilearn_project/core/appBar/searchbar.dart';
+import 'package:ilearn_project/core/appBar/userpoint.dart';
 
-import '../core/themes.dart';
+import '../themes.dart';
+
 
 class AppBarCustom extends StatelessWidget {
   final String appBarText;

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/onboarding_controller/onboarding_controller.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/pages/onboarding/data/onBoardingData.dart';
 import 'package:ilearn_project/pages/onboarding/widget/endButton.dart';
 import 'package:ilearn_project/pages/onboarding/widget/onBoardWidget.dart';
+
+import '../onboarding_controller/onboarding_controller.dart';
 
 class OnBoarding extends StatelessWidget {
   OnBoarding({super.key});
