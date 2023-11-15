@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/controllers/home_controller/homepage_controller.dart';
 import 'package:ilearn_project/models/course_model.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 
 import '../../../core/themes.dart';
 
@@ -14,7 +15,6 @@ class ForYou extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: screenHeight * 0.25,
       child: FutureBuilder<List<CourseModel>>(
@@ -30,7 +30,7 @@ class ForYou extends StatelessWidget {
               itemBuilder: (BuildContext context, int i) {
                 CourseModel course = courses[i];
                 return GestureDetector(
-                  onTap: () => Get.toNamed("/detailcourse", arguments: courses[i]),
+                  onTap: () => Get.toNamed(RouteName.detail_course, arguments: courses[i]),
                   child: Container(
                     width: screenHeight * 0.25,
                     height: 210,

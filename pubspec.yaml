@@ -39,6 +39,7 @@ dependencies:
   firebase_auth: ^4.12.1 
   firebase_storage: ^11.4.1
   cloud_firestore: ^4.12.2
+  youtube_player_flutter: ^8.1.2
   carousel_slider: 
   persistent_bottom_nav_bar: ^5.0.2
   # The following adds the Cupertino Icons font to your application.

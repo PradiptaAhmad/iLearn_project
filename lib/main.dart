@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/bindings/foryouB.dart';
 import 'package:ilearn_project/bindings/homepageB.dart';
-import 'package:ilearn_project/pages/foryou_page/foryou_detailpage.dart';
-import 'package:ilearn_project/pages/news_page/widget/detail_card_news.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
@@ -29,9 +26,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      home: DetailForYou(),
-      // initialRoute: RouteName.home,
-      // initialBinding: HomepageB(),
+      initialRoute: RouteName.home,
+      initialBinding: HomepageB(),
     );
   }
 }
