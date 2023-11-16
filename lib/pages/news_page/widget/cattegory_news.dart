@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/themes.dart';
-import '../../../data/news.dart';
+import '../data/news.dart';
+
 
 class CategoryNews extends StatelessWidget {
   final List<News> newsList;

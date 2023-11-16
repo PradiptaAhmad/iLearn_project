@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/appBar/searchbar.dart';
-import 'package:ilearn_project/controllers/foryou_controller/foryou_controller.dart';
 import 'package:ilearn_project/pages/foryou_page/widget/foryou_appbar.dart';
 import 'package:ilearn_project/pages/foryou_page/widget/foryou_listview.dart';
+
+import '../../../core/appBar/searchbar.dart';
+import '../foryou_controller/foryou_controller.dart';
 
 class ForYou extends StatelessWidget {
   final foryouC = Get.find<ForyouController>();

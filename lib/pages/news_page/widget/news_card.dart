@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/core/themes.dart';
 
-import '../../../data/news.dart';
+import '../data/news.dart';
 import '../../../routes/route_name.dart';
 import 'btnIconNews.dart';
 

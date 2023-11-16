@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/register_controller/register_controller.dart';
+
 import 'package:ilearn_project/pages/register_page/widget/btnInput.dart';
 import 'package:ilearn_project/pages/register_page/widget/formTextField.dart';
 import 'package:ilearn_project/pages/register_page/widget/logo.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/pages/register_page/widget/checkbox.dart';
+
+import '../register_controller/register_controller.dart';
 
 class Register extends StatelessWidget {
   const Register({Key? key}); // Perbaikan pada constructor

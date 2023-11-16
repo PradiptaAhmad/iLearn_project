@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../appBar/appbarcustom.dart';
-import 'widget/playlistmycourses.dart';
+import '../../../core/appBar/appbarcustom.dart';
+import '../widget/playlistmycourses.dart';
 
 class MyCoursesPage extends StatelessWidget {
   const MyCoursesPage({super.key});

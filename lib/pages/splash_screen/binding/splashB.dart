@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/splash_controller/splash_controller.dart';
+
+import '../splash_controller/splash_controller.dart';
 
 class SplashB extends Bindings {
   @override

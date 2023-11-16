@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ilearn_project/controllers/home_controller/homepage_controller.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/models/news_model.dart';
+
+import '../home_controller/homepage_controller.dart';
 
 class NewsCard extends StatelessWidget {
   final homepageC = Get.find<HomepageController>();
