@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ilearn_project/appBar/appbarcustom.dart';
 import 'package:ilearn_project/pages/news_page/widget/cattegory_news.dart';
 import 'package:ilearn_project/pages/news_page/widget/news_card.dart';
 import 'package:ilearn_project/pages/news_page/widget/news_trending_card.dart';
 
-import '../../core/themes.dart';
-import '../../data/news.dart';
+import '../../../core/appBar/appbarcustom.dart';
+import '../../../core/themes.dart';
+import '../data/news.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({super.key, required List<News> listNews});

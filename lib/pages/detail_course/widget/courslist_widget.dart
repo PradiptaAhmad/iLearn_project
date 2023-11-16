@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/detail_controller/detail_controller.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/routes/route_name.dart';
+
+import '../detail_controller/detail_controller.dart';
 
 class CourseListDetail extends StatelessWidget {
   final detailC = Get.find<DetailCourseController>();

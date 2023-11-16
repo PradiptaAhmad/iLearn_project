@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ilearn_project/pages/mycourses_page/widget/playlistdetailmycourse.dart';
 
-import '../../appBar/appbarcustom.dart';
-import '../../core/themes.dart';
+import '../../../core/appBar/appbarcustom.dart';
+import '../../../core/themes.dart';
 
 class DetailMyCourses extends StatelessWidget {
   const DetailMyCourses({super.key});

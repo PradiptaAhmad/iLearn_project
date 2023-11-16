@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/detail_controller/detail_controller.dart';
 import 'package:ilearn_project/pages/foryou_page/widget/icontxt.dart';
 import 'package:ilearn_project/pages/detail_course/widget/playlistcourse.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../../core/themes.dart';
-import '../foryou_page/widget/button_buy.dart';
+import '../../../core/themes.dart';
+import '../../foryou_page/widget/button_buy.dart';
+import '../detail_controller/detail_controller.dart';
 
 class DetailCourse extends StatelessWidget {
   final detailC = Get.find<DetailCourseController>();

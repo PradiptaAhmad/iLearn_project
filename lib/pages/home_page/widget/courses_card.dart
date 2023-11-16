@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ilearn_project/controllers/home_controller/homepage_controller.dart';
 import 'package:ilearn_project/models/course_model.dart';
 import 'package:ilearn_project/routes/route_name.dart';
 
 import '../../../core/themes.dart';
+import '../home_controller/homepage_controller.dart';
 
 class ForYou extends StatelessWidget {
   ForYou({Key? key});

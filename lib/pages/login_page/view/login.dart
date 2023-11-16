@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/controllers/login_controller/loginPageController.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/pages/login_page/data/login_data.dart';
 import 'package:ilearn_project/pages/login_page/widget/btn_forgot.dart';
@@ -9,6 +8,8 @@ import 'package:ilearn_project/pages/login_page/widget/loginFormField.dart';
 import 'package:ilearn_project/pages/login_page/widget/text_or.dart';
 import 'package:ilearn_project/pages/login_page/widget/txtBtn_signup.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnLogo.dart';
+
+import '../login_controller/loginPageController.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});

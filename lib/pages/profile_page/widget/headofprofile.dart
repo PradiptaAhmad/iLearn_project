@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../appBar/appbarcustom.dart';
+
+import '../../../core/appBar/appbarcustom.dart';
+
 
 class HeaderProfile extends StatelessWidget {
   const HeaderProfile({Key? key}) : super(key: key);

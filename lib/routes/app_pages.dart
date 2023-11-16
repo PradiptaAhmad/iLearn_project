@@ -1,25 +1,26 @@
 import 'package:get/get.dart';
-import 'package:ilearn_project/bindings/detailB.dart';
-import 'package:ilearn_project/bindings/foryouB.dart';
-import 'package:ilearn_project/bindings/homepageB.dart';
-import 'package:ilearn_project/bindings/loginB.dart';
-import 'package:ilearn_project/bindings/onBoardB.dart';
-import 'package:ilearn_project/bindings/registerB.dart';
-import 'package:ilearn_project/bindings/splashB.dart';
-import 'package:ilearn_project/bindings/videoB.dart';
-import 'package:ilearn_project/pages/detail_course/detail_course.dart';
-import 'package:ilearn_project/pages/foryou_page/foryou.dart';
-import 'package:ilearn_project/pages/home_page/home.dart';
-import 'package:ilearn_project/pages/login_page/login.dart';
-import 'package:ilearn_project/pages/news_page/detail_news_page.dart';
-import 'package:ilearn_project/pages/onboarding/onboard.dart';
-import 'package:ilearn_project/pages/register_page/register.dart';
-import 'package:ilearn_project/pages/splash_screen/splash.dart';
-import 'package:ilearn_project/pages/video_player/video_view.dart';
+
+import 'package:ilearn_project/pages/detail_course/binding/detailB.dart';
+import 'package:ilearn_project/pages/foryou_page/binding/foryouB.dart';
+import 'package:ilearn_project/pages/home_page/binding/homepageB.dart';
+import 'package:ilearn_project/pages/login_page/binding/loginB.dart';
+import 'package:ilearn_project/pages/onboarding/binding/onBoardB.dart';
+import 'package:ilearn_project/pages/splash_screen/binding/splashB.dart';
+import 'package:ilearn_project/pages/video_player/binding/videoB.dart';
+import 'package:ilearn_project/pages/detail_course/view/detail_course.dart';
+import 'package:ilearn_project/pages/foryou_page/view/foryou.dart';
+import 'package:ilearn_project/pages/home_page/view/home.dart';
+import 'package:ilearn_project/pages/login_page/view/login.dart';
+import 'package:ilearn_project/pages/news_page/view/detail_news_page.dart';
+import 'package:ilearn_project/pages/onboarding/view/onboard.dart';
+import 'package:ilearn_project/pages/register_page/view/register.dart';
+import 'package:ilearn_project/pages/splash_screen/view/splash.dart';
+import 'package:ilearn_project/pages/video_player/view/video_view.dart';
 import 'package:ilearn_project/routes/route_name.dart';
-import '../pages/mycourses_page/mycourses.dart';
-import '../pages/news_page/news_page.dart';
-import '../pages/profile_page/profile.dart';
+import '../pages/mycourses_page/view/mycourses.dart';
+import '../pages/news_page/view/news_page.dart';
+import '../pages/profile_page/view/profile.dart';
+import '../pages/register_page/binding/registerB.dart';
 
 class AppPages {
   static final pages = [
