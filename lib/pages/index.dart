@@ -42,3 +42,8 @@ export 'splash_screen/controller/splash_controller.dart' show SplashController;
 export 'news_page/view/news_page.dart' show NewsPageView;
 export 'news_page/binding/news_page_binding.dart' show NewsPageBinding;
 export 'news_page/controller/news_page_controller.dart' show NewsPageController;
+
+// paymentpage
+export 'payment_page/view/payment_page_view.dart' show PaymentPageView;
+export 'payment_page/binding/payment_page_binding.dart' show PaymentPageBinding;
+export 'payment_page/controller/payment_page_controller.dart' show PaymentPageController;

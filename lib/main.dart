@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       getPages: AppPages.pages,
-      initialRoute: RouteName.navbar,
+      initialRoute: RouteName.payment,
     );
   }
 }
