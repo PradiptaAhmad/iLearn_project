@@ -3,10 +3,9 @@ import 'package:get/get.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/models/course_model.dart';
 
-import '../foryou_controller/foryou_controller.dart';
+import '../controller/foryou_controller.dart';
 
-class ForyouList extends StatelessWidget {
-  final foryouC = Get.find<ForyouController>();
+class ForyouList extends GetView<ForyouPageController> {
   ForyouList({super.key});
 
   @override
@@ -14,7 +13,7 @@ class ForyouList extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return FutureBuilder<List<CourseModel>>(
-      future: foryouC.fetchData(),
+      future: controller.fetchData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           List<CourseModel> courses = snapshot.data!;

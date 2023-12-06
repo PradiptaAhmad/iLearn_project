@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class RegisterC extends GetxController {
+class RegisterController extends GetxController {
   var isObsecure = true.obs;
 
   // data pengguna

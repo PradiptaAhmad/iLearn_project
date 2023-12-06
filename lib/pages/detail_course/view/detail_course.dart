@@ -6,25 +6,24 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../../core/themes.dart';
 import '../../foryou_page/widget/button_buy.dart';
-import '../detail_controller/detail_controller.dart';
+import '../controller/detail_controller.dart';
 
-class DetailCourse extends StatelessWidget {
-  final detailC = Get.find<DetailCourseController>();
+class DetailCourseView extends GetView<DetailCourseController> {
   final data = Get.arguments;
-  DetailCourse({super.key});
+  DetailCourseView({super.key});
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    detailC.course = data!;
-    detailC.courseId.value = detailC.course.id!;
+    controller.course = data!;
+    controller.courseId.value = controller.course.id!;
     print(data!);
     YoutubePlayerController youtubeController = YoutubePlayerController(
       initialVideoId:
-          "${YoutubePlayer.convertUrlToId(detailC.course.video_banner!)}",
+          "${YoutubePlayer.convertUrlToId(controller.course.video_banner!)}",
       flags: YoutubePlayerFlags(
-        autoPlay: true,
-        mute: true,
+        autoPlay: false,
+        mute: false,
       ),
     );
     return Scaffold(
@@ -55,7 +54,7 @@ class DetailCourse extends StatelessWidget {
           //       // Handle navigation when the image is tapped
           //     },
           //     // child: YoutubePlayer (
-          //     //   controller: detailC.youtubePlayerController,
+          //     //   controller: controller.youtubePlayerController,
           //     //   showVideoProgressIndicator: true,
           //     //   progressIndicatorColor: primaryColor,
           //     //   progressColors: ProgressBarColors(
@@ -72,10 +71,10 @@ class DetailCourse extends StatelessWidget {
             margin: EdgeInsets.only(left: 12, right: 12),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text("${detailC.course.title}",
+              Text("${controller.course.title}",
                   style: titleForYou(color: Colors.black)),
               Text(
-                "${detailC.course.description}",
+                "${controller.course.description}",
                 style: TextStyle(
                   color: Colors.black
                       .withOpacity(0.7), // Set alpha to 0.7 for 70% opacity
@@ -109,25 +108,50 @@ class DetailCourse extends StatelessWidget {
           //   alignment: Alignment.centerLeft,
           //   child:
           // ),
-          SizedBox(height: 15),
-
           SizedBox(
             height: 5,
           ),
           Playlist(),
+        
         ],
       ),
-      bottomSheet: BottomSheet(
-        onClosing: () {},
-        backgroundColor: Colors.white,
-        enableDrag: false,
-        builder: (context) {
-          return const SizedBox(
-            height: 80,
-            child: EnroollBottomSheet(),
-          );
-        },
+      // bottomSheet: BottomSheet(
+      //   onClosing: () {},
+      //   backgroundColor: Colors.transparent,
+      //   enableDrag: false,
+      //   builder: (context) {
+      //     return GestureDetector(
+      //       child: Container(
+      //           height: 50,
+      //           margin: EdgeInsets.only(bottom: 15),
+      //           decoration: BoxDecoration(
+      //               color: primaryColor,
+      //               borderRadius: BorderRadius.circular(10)),
+      //           width: screenWidth * 0.9,
+      //           child: Center(
+      //             child: Text(
+      //               "Buy Now",
+      //               style: buttonTxt(),
+      //             ),
+      //           )),
+      //     );
+      //   },
+      // ),
+      floatingActionButton: GestureDetector(
+        child: Container(
+            height: 50,
+            margin: EdgeInsets.only(bottom: 15),
+            decoration: BoxDecoration(
+                color: primaryColor, borderRadius: BorderRadius.circular(10)),
+            width: screenWidth * 0.9,
+            child: Center(
+              child: Text(
+                "Buy Now",
+                style: buttonTxt(),
+              ),
+            )),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

@@ -5,7 +5,7 @@ class CourseModel {
   String? banner;
   String? video_banner;
   String? price;
-  List<Courses>? courses;
+  List<Courses>? course;
 
   CourseModel(
       {this.id,
@@ -14,7 +14,7 @@ class CourseModel {
       this.banner,
       this.price,
       this.video_banner,
-      this.courses});
+      this.course});
 
   CourseModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -23,10 +23,10 @@ class CourseModel {
     banner = json['banner'];
     price = json['price'];
     video_banner = json['video_banner'];
-    if (json['courses'] != null) {
-      courses = <Courses>[];
-      json['courses'].forEach((v) {
-        courses!.add(new Courses.fromJson(v));
+    if (json['course'] != null) {
+      course = <Courses>[];
+      json['course'].forEach((v) {
+        course!.add(new Courses.fromJson(v));
       });
     }
   }
@@ -39,8 +39,8 @@ class CourseModel {
     data['banner'] = this.banner;
     data['video_banner'] = this.video_banner;
     data['price'] = this.price;
-    if (this.courses != null) {
-      data['courses'] = this.courses!.map((v) => v.toJson()).toList();
+    if (this.course != null) {
+      data['course'] = this.course!.map((v) => v.toJson()).toList();
     }
     return data;
   }

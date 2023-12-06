@@ -7,8 +7,8 @@ import '../../../core/appBar/appbarcustom.dart';
 import '../../../core/themes.dart';
 import '../data/news.dart';
 
-class NewsPage extends StatelessWidget {
-  const NewsPage({super.key, required List<News> listNews});
+class NewsPageView extends StatelessWidget {
+  const NewsPageView({super.key, required List<News> listNews});
 
   @override
   Widget build(BuildContext context) {

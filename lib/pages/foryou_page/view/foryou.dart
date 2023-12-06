@@ -4,11 +4,10 @@ import 'package:ilearn_project/pages/foryou_page/widget/foryou_appbar.dart';
 import 'package:ilearn_project/pages/foryou_page/widget/foryou_listview.dart';
 
 import '../../../core/appBar/searchbar.dart';
-import '../foryou_controller/foryou_controller.dart';
+import '../controller/foryou_controller.dart';
 
-class ForYou extends StatelessWidget {
-  final foryouC = Get.find<ForyouController>();
-  ForYou({super.key});
+class ForYouPageView extends GetView<ForyouPageController> {
+  ForYouPageView({super.key});
 
   @override
   Widget build(BuildContext context) {

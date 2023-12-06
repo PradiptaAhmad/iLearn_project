@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../register_controller/register_controller.dart';
+import '../controller/register_controller.dart';
 
-class CheckboxWidget extends StatelessWidget {
-  static final registerC = Get.put(RegisterC());
+class CheckboxWidget extends GetView<RegisterController> {
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +12,9 @@ class CheckboxWidget extends StatelessWidget {
         Obx(
           () => 
         Checkbox(
-            value: registerC.isChecked.value,
+            value: controller.isChecked.value,
           onChanged: (bool? newValue) {
-              registerC.isChecked.value = newValue!;
+              controller.isChecked.value = newValue!;
           },
           visualDensity: VisualDensity(
             horizontal: -2.0,
