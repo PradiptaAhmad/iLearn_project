@@ -4,10 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/models/news_model.dart';
 
-import '../home_controller/homepage_controller.dart';
+import '../controller/homepage_controller.dart';
 
-class NewsCard extends StatelessWidget {
-  final homepageC = Get.find<HomepageController>();
+class NewsCard extends GetView<HomepageController> {
   NewsCard({super.key});
 
   @override
@@ -16,7 +15,7 @@ class NewsCard extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return FutureBuilder<List<NewsModel>>(
-      future: homepageC.getNewsData(),
+      future: controller.getNewsData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           List<NewsModel> newss = snapshot.data!;

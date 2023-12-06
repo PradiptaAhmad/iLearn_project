@@ -9,10 +9,10 @@ import 'package:ilearn_project/pages/login_page/widget/text_or.dart';
 import 'package:ilearn_project/pages/login_page/widget/txtBtn_signup.dart';
 import 'package:ilearn_project/pages/register_page/widget/btnLogo.dart';
 
-import '../login_controller/loginPageController.dart';
+import '../controller/login_controller.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class LoginPageView extends GetView<LoginPageController> {
+  const LoginPageView({super.key});
 
   // keys validator
   static final _emailFormKey = GlobalKey<FormState>();

@@ -5,12 +5,11 @@ import 'package:ilearn_project/models/course_model.dart';
 import 'package:ilearn_project/routes/route_name.dart';
 
 import '../../../core/themes.dart';
-import '../home_controller/homepage_controller.dart';
+import '../controller/homepage_controller.dart';
 
-class ForYou extends StatelessWidget {
+class ForYou extends GetView<HomepageController> {
   ForYou({Key? key});
 
-  final HomepageController homepageC = Get.find<HomepageController>();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class ForYou extends StatelessWidget {
     return Container(
       height: screenHeight * 0.25,
       child: FutureBuilder<List<CourseModel>>(
-        future: homepageC.getCourseData(),
+        future: controller.getCourseData(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             List<CourseModel> courses = snapshot.data!;

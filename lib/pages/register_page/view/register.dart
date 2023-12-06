@@ -7,18 +7,16 @@ import 'package:ilearn_project/pages/register_page/widget/logo.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:ilearn_project/pages/register_page/widget/checkbox.dart';
 
-import '../register_controller/register_controller.dart';
+import '../controller/register_controller.dart';
 
-class Register extends StatelessWidget {
-  const Register({Key? key}); // Perbaikan pada constructor
+class RegisterPageView extends GetView<RegisterController> {
+  const RegisterPageView({Key? key}); // Perbaikan pada constructor
 
   // FormKey
   static final _firstNameFormKey = GlobalKey<FormState>();
   static final _lastNameFormKey = GlobalKey<FormState>();
   static final _emailFormKey = GlobalKey<FormState>();
   static final _passwordFormKey = GlobalKey<FormState>();
-
-  static final registerC = Get.find<RegisterC>();
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +49,8 @@ class Register extends StatelessWidget {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 onChanged: (value) {
                   if (_firstNameFormKey.currentState!.validate()) {
-                    registerC.first_name.value = value;
-                    registerC.isFirstNameValid.value = true;
+                    controller.first_name.value = value;
+                    controller.isFirstNameValid.value = true;
                   }
                 },
                 validatorForm: (value) {
@@ -73,7 +71,7 @@ class Register extends StatelessWidget {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 onChanged: (value) {
                   if (_lastNameFormKey.currentState!.validate()) {
-                    registerC.last_name.value = value;
+                    controller.last_name.value = value;
                   }
                 },
               ),
@@ -88,13 +86,13 @@ class Register extends StatelessWidget {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 onChanged: (value) {
                   if (_emailFormKey.currentState!.validate()) {
-                    registerC.email.value = value;
-                    registerC.isEmailValid.value = true;
-                    registerC.isEmailUnique.value = true;
+                    controller.email.value = value;
+                    controller.isEmailValid.value = true;
+                    controller.isEmailUnique.value = true;
                   }
                 },
                 validatorForm: (value) {
-                  final result = registerC.validateEmail(value!);
+                  final result = controller.validateEmail(value!);
                   if (result != null) {
                     return result;
                   }
@@ -108,14 +106,14 @@ class Register extends StatelessWidget {
                     // Perbaikan pada nama komponen
                     label: "Password",
                     icon: Icons.lock,
-                    isObsecure: registerC.isObsecure.value,
+                    isObsecure: controller.isObsecure.value,
                     textInputType: TextInputType.visiblePassword,
                     keys: _passwordFormKey,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     onChanged: (value) {
                       if (_passwordFormKey.currentState!.validate()) {
-                        registerC.password.value = value;
-                        registerC.isPasswordValid.value = true;
+                        controller.password.value = value;
+                        controller.isPasswordValid.value = true;
                       }
                     },
                     validatorForm: (value) {
@@ -126,11 +124,11 @@ class Register extends StatelessWidget {
                     },
                     iconButton: IconButton(
                         onPressed: () {
-                          registerC.isObsecure.value =
-                              !registerC.isObsecure.value;
+                          controller.isObsecure.value =
+                              !controller.isObsecure.value;
                         },
                         icon: Icon(
-                          registerC.isObsecure.value
+                          controller.isObsecure.value
                               ? Icons.visibility_off
                               : Icons.visibility,
                         )),
@@ -142,7 +140,7 @@ class Register extends StatelessWidget {
               SizedBox(height: 15),
               Obx(() {
                 return Visibility(
-                  visible: !registerC.isEmailUnique.value,
+                  visible: !controller.isEmailUnique.value,
                   child: Text(
                     "This email is already in use",
                     style: errorText(color: isError),
@@ -150,10 +148,10 @@ class Register extends StatelessWidget {
                 );
               }),
 
-              Obx(() => registerC.isAllValid()
+              Obx(() => controller.isAllValid()
                   ? ButtonInputUser(
                       onPressed: () {
-                        registerC.createUserLogin();
+                        controller.createUserLogin();
                       },
                       color: primaryColor,
                     )

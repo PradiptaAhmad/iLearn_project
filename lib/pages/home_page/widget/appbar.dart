@@ -1,47 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ilearn_project/pages/home_page/controller/homepage_controller.dart';
 import 'package:ilearn_project/pages/home_page/widget/userpoint.dart';
 
 import '../../../core/themes.dart';
 
-class AppBarCustom extends StatelessWidget {
-  const AppBarCustom({super.key});
+class HomeAppbar extends GetView<HomepageController> implements PreferredSizeWidget {
+  const HomeAppbar({super.key});
 
-  Widget profileImage() {
-    return ImageProfile();
-  }
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-    return Container(
-      width: screenWidth,
-      height: screenHeight * 0.1, // Sesuaikan dengan tinggi yang diinginkan
-      padding: EdgeInsets.only(top: screenHeight * 0.035),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Text("Start Learning", style: titlePage()),
+    return AppBar(
+      backgroundColor: pinkMuda,
+      leading: Container(
+        margin: EdgeInsets.all(7),
+        child: CircleAvatar(
+          backgroundImage: AssetImage(
+            "assets/images/avatar.png",
           ),
-          Stack(
-            alignment: Alignment.bottomRight,
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage("assets/images/avatar.png"),
-              ),
-              Positioned(
-                bottom: 0,
-                right: 0,
-                child: Container(
-                  child: profileImage(),
-                ),
-              ),
-            ],
-          ),
-        ],
+        ),
       ),
+      title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text("Good Afternoon,",
+            style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 12,
+                color: Colors.black)),
+        Text("Ahmad Pradipta",
+            style: TextStyle(
+                fontWeight: FontWeight.w700, fontSize: 16, color: Colors.black))
+      ]),
     );
   }
+  
+@override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }

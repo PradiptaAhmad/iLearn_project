@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/models/course_model.dart';
 
-class ForyouController extends GetxController {
+class ForyouPageController extends GetxController {
   Future<List<CourseModel>> fetchData() async {
     final snapshot =
         await FirebaseFirestore.instance.collection('courses').get();

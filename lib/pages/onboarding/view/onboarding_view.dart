@@ -5,13 +5,12 @@ import 'package:ilearn_project/pages/onboarding/data/onBoardingData.dart';
 import 'package:ilearn_project/pages/onboarding/widget/endButton.dart';
 import 'package:ilearn_project/pages/onboarding/widget/onBoardWidget.dart';
 
-import '../onboarding_controller/onboarding_controller.dart';
+import '../controller/onboarding_controller.dart';
 
-class OnBoarding extends StatelessWidget {
-  OnBoarding({super.key});
+class OnBoardingPageView extends GetView<OnBoardingController> {
+  OnBoardingPageView({super.key});
 
   // GetX State Management
-  final onBoardingC = Get.find<OnBoardingController>();
   final PageController _pageController = PageController();
   final List<Map<String, String>> onboardingData = OnBoardingData().dataArrays;
   @override
@@ -24,7 +23,7 @@ class OnBoarding extends StatelessWidget {
             child: PageView.builder(
               controller: _pageController,
               onPageChanged: (index) {
-                onBoardingC.currentPage.value = index;
+                controller.currentPage.value = index;
               },
               itemCount: onboardingData.length,
               itemBuilder: (context, index) {
@@ -53,7 +52,7 @@ class OnBoarding extends StatelessWidget {
                           height: 10,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: onBoardingC.currentPage.value == index
+                            color: controller.currentPage.value == index
                                 ? primaryColor // Active dot color
                                 : inActiveColor, // Inactive dot color
                           ),
@@ -63,10 +62,10 @@ class OnBoarding extends StatelessWidget {
                   ),
                 ),
               )),
-          Obx(() => onBoardingC.currentPage.value == 2
+          Obx(() => controller.currentPage.value == 2
               ? EndButton(
                   onPressed: () {
-                    onBoardingC.switchToLoginPage();
+                    controller.switchToLoginPage();
                   },
                   color: primaryColor)
               : SizedBox(

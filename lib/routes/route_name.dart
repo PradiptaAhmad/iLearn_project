@@ -12,4 +12,5 @@ abstract class RouteName {
   static const String profile = '/profile';
   static const String foryou = '/foryou';
   static const String video = '/video';
+  static const String navbar = '/navbar';
 }

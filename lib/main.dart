@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/pages/home_page/binding/homepageB.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
@@ -26,10 +25,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Navbar(),
       getPages: AppPages.pages,
-      initialRoute: RouteName.home,
-      initialBinding: HomepageB(),
+      initialRoute: RouteName.navbar,
     );
   }
 }
