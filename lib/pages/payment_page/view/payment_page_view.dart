@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_card.dart';
+import 'package:ilearn_project/pages/payment_page/widget/payment_tile.dart';
 
 class PaymentPageView extends StatelessWidget {
   const PaymentPageView({super.key});
@@ -44,49 +45,46 @@ class PaymentPageView extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
-            child: Column(children: [
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 10,
-                        offset: Offset(0, 2),
-                      ),
-                    ]),
-                child: ExpansionTile(
-                  initiallyExpanded: true,
-                  title: Text("Dompet Digital"),
-                  children: [
-                    Container(
-                      width: screenWidth * 0.9,
-                      child: Row(children: [
-                        PaymentCard(
-                            image: "assets/images/payment/dana.svg",
-                            title: "Dana"),
-                        PaymentCard(
-                            image: "assets/images/payment/gopay.svg",
-                            title: "Gopay"),
-                        PaymentCard(
-                            image: "assets/images/payment/ovo.svg",
-                            title: "Ovo"),
-                        PaymentCard(
-                            image: "assets/images/payment/shopeepay.svg",
-                            title: "Shopee"),
-                        PaymentCard(
-                            image: "assets/images/payment/jenius.svg",
-                            title: "Jenius"),
-                      ]),
-                    )
-                  ],
-                ),
-              )
-            ]),
-          )
+          PaymentTile(
+              title: "Dompet Digital",
+              isExpanded: true,
+              child: Container(
+                width: screenWidth * 0.9,
+                child: Row(children: [
+                  PaymentCard(
+                      image: "assets/images/payment/dana.svg", title: "Dana"),
+                  PaymentCard(
+                      image: "assets/images/payment/gopay.svg", title: "Gopay"),
+                  PaymentCard(
+                      image: "assets/images/payment/ovo.svg", title: "Ovo"),
+                  PaymentCard(
+                      image: "assets/images/payment/shopeepay.svg",
+                      title: "Shopee"),
+                  PaymentCard(
+                      image: "assets/images/payment/jenius.svg",
+                      title: "Jenius"),
+                ]),
+              )),
+          PaymentTile(
+            title: "Transfer Virtual Account",
+            isExpanded: true,
+            child: Row(
+              children: [
+                PaymentCard(
+                    image: "assets/images/payment/bca.svg", title: "BCA"),
+                PaymentCard(
+                    image: "assets/images/payment/bni.svg", title: "BNI"),
+                PaymentCard(
+                    image: "assets/images/payment/bri.svg", title: "BRI"),
+                PaymentCard(
+                    image: "assets/images/payment/mandiri.svg",
+                    title: "Mandiri"),
+                PaymentCard(
+                    image: "assets/images/payment/permata.svg",
+                    title: "Permata")
+              ],
+            ),
+          ),
         ],
       ),
     );
