@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,6 @@ class PaymentPageView extends GetView<PaymentPageController> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = Get.width;
-    double screenHeight = Get.height;
     return Scaffold(
       appBar: AppBar(
         title: Text(

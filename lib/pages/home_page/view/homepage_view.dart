@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ilearn_project/core/appBar/appbarcustom.dart';
-import 'package:ilearn_project/core/navbar/bottomnavbar.dart';
 import 'package:ilearn_project/pages/home_page/controller/homepage_controller.dart';
 import 'package:ilearn_project/pages/home_page/widget/appbar.dart';
 import 'package:ilearn_project/pages/home_page/widget/category.dart';

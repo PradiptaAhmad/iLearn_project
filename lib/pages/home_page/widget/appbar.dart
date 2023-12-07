@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/pages/home_page/controller/homepage_controller.dart';
-import 'package:ilearn_project/pages/home_page/widget/userpoint.dart';
 
 import '../../../core/themes.dart';
 
@@ -11,8 +10,6 @@ class HomeAppbar extends GetView<HomepageController> implements PreferredSizeWid
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
     return AppBar(
       backgroundColor: pinkMuda,
       leading: Container(

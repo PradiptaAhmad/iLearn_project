@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:ilearn_project/routes/app_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ilearn_project/routes/route_name.dart';
-import 'core/navbar/bottomnavbar.dart';
 import 'firebase_options.dart';
 
 void main() async {
