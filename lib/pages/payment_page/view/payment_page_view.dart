@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:get/get.dart';
+import 'package:ilearn_project/pages/index.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_card.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_tile.dart';
 
-class PaymentPageView extends StatelessWidget {
+class PaymentPageView extends GetView<PaymentPageController> {
   const PaymentPageView({super.key});
 
   @override
@@ -50,20 +52,13 @@ class PaymentPageView extends StatelessWidget {
               isExpanded: true,
               child: Container(
                 width: screenWidth * 0.9,
-                child: Row(children: [
-                  PaymentCard(
-                      image: "assets/images/payment/dana.svg", title: "Dana"),
-                  PaymentCard(
-                      image: "assets/images/payment/gopay.svg", title: "Gopay"),
-                  PaymentCard(
-                      image: "assets/images/payment/ovo.svg", title: "Ovo"),
-                  PaymentCard(
-                      image: "assets/images/payment/shopeepay.svg",
-                      title: "Shopee"),
-                  PaymentCard(
-                      image: "assets/images/payment/jenius.svg",
-                      title: "Jenius"),
-                ]),
+                  child: Obx(() =>
+                      controller.walletWidget.value ??
+                      Container(
+                        child: Center(
+                          child: Text("An Error Occured"),
+                        ),
+                      ))
               )),
           PaymentTile(
             title: "Transfer Virtual Account",

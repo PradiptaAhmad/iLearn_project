@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:ilearn_project/core/themes.dart';
+import 'package:ilearn_project/pages/index.dart';
 
-class PaymentCard extends StatelessWidget {
+class PaymentCard extends GetView<PaymentPageController> {
   final String image;
   final String title;
   PaymentCard({Key? key, required this.image, required this.title})
@@ -14,6 +16,9 @@ class PaymentCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GestureDetector(
+          onTap: () {
+            controller.updateWidget(title);
+          },
           child: Container(
               height: 50,
               width: 50,
