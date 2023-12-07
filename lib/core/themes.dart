@@ -85,10 +85,10 @@ TextStyle titleCard() {
           fontSize: figmaFontsize(14)));
 }
 
-TextStyle subTitleCard() {
+TextStyle subTitleCard({required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-        color: primaryColor,
+        color: color,
           fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(12)));
 }
@@ -276,5 +276,6 @@ TextStyle priceCourses() {
     color: darkGrey,
     fontSize: 11,
   ));
+
 }
 

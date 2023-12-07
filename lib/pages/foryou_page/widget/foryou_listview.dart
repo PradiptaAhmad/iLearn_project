@@ -59,7 +59,7 @@ class ForyouList extends GetView<ForyouPageController> {
                         ),
                         Text(
                           course.description!,
-                          style: subTitleCard(),
+                          style: subTitleCard(color: primaryColor),
                         ),
                         Spacer(),
                         Container(
