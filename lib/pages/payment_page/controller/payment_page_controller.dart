@@ -23,6 +23,17 @@ class PaymentPageController extends GetxController {
           image: "assets/images/payment/shopeepay.svg", title: "Shopee"),
       PaymentCard(image: "assets/images/payment/jenius.svg", title: "Jenius"),
     ]);
+    bankWidget.value = Row(
+      children: [
+        PaymentCard(image: "assets/images/payment/bca.svg", title: "BCA"),
+        PaymentCard(image: "assets/images/payment/bni.svg", title: "BNI"),
+        PaymentCard(image: "assets/images/payment/bri.svg", title: "BRI"),
+        PaymentCard(
+            image: "assets/images/payment/mandiri.svg", title: "Mandiri"),
+        PaymentCard(
+            image: "assets/images/payment/permata.svg", title: "Permata")
+      ],
+    );
   }
 
   Future<void> updateWidget(String title) async {
@@ -61,6 +72,41 @@ class PaymentPageController extends GetxController {
               image: "assets/images/payment/jenius.svg",
               title: "Jenius Pay",
               description: "Pembayaran Menggunakan Jenius Pay");
+        }
+      case "BCA":
+        {
+          bankWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/bca.svg",
+              title: "Virtual Account BCA",
+              description: "Pembayaran Menggunakan Virtual Account BCA");
+        }
+      case "BNI":
+        {
+          bankWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/bni.svg",
+              title: "Virtual Account BNI",
+              description: "Pembayaran Menggunakan VIrtual Account BNI");
+        }
+      case "BRI":
+        {
+          bankWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/bri.svg",
+              title: "Virtual Account BRI",
+              description: "Pembayaran Menggunakan VIrtual Account BRI");
+        }
+      case "Mandiri":
+        {
+          bankWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/mandiri.svg",
+              title: "Virtual Account Mandiri",
+              description: "Pembayaran Menggunakan VIrtual Account Mandiri");
+        }
+      case "Permata":
+        {
+          bankWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/permata.svg",
+              title: "Virtual Account Permata",
+              description: "Pembayaran Menggunakan VIrtual Account Permata");
         }
       default:
         {

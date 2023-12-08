@@ -61,22 +61,11 @@ class PaymentPageView extends GetView<PaymentPageController> {
           PaymentTile(
             title: "Transfer Virtual Account",
             isExpanded: true,
-            child: Row(
-              children: [
-                PaymentCard(
-                    image: "assets/images/payment/bca.svg", title: "BCA"),
-                PaymentCard(
-                    image: "assets/images/payment/bni.svg", title: "BNI"),
-                PaymentCard(
-                    image: "assets/images/payment/bri.svg", title: "BRI"),
-                PaymentCard(
-                    image: "assets/images/payment/mandiri.svg",
-                    title: "Mandiri"),
-                PaymentCard(
-                    image: "assets/images/payment/permata.svg",
-                    title: "Permata")
-              ],
-            ),
+              child: Obx(() =>
+                  controller.bankWidget.value ??
+                  Container(
+                    child: Center(child: Text("An Error Occured")),
+                  ))
           ),
         ],
       ),
