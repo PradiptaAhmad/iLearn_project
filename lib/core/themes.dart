@@ -77,18 +77,18 @@ TextStyle btnTime() {
 
 //Card yang di home
 
-TextStyle titleCard() {
+TextStyle titleCard({required final size, required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-        color: Colors.black,
+        color: color,
           fontWeight: FontWeight.w600,
-          fontSize: figmaFontsize(14)));
+          fontSize: figmaFontsize(size)));
 }
 
-TextStyle subTitleCard() {
+TextStyle subTitleCard({required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-        color: primaryColor,
+        color: color,
           fontWeight: FontWeight.w500,
           fontSize: figmaFontsize(12)));
 }
@@ -276,5 +276,6 @@ TextStyle priceCourses() {
     color: darkGrey,
     fontSize: 11,
   ));
+
 }
 

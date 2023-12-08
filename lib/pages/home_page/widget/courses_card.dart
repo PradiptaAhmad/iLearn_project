@@ -63,7 +63,7 @@ class ForYou extends GetView<HomepageController> {
                           margin: EdgeInsets.only(left: 10, top: 5, right: 5),
                           child: Text(
                             course.title!,
-                            style: titleCard(),
+                            style: titleCard(size: 14, color: Colors.black),
                           ),
                         ),
                         // Container(

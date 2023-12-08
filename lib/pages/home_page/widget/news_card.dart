@@ -71,7 +71,7 @@ class NewsCard extends GetView<HomepageController> {
                           margin: EdgeInsets.only(left: 12),
                           child: Text(
                             "${news.title}",
-                            style: titleCard(),
+                            style: titleCard(size: 14, color: Colors.black),
                           ),
                         ),
                         Container(

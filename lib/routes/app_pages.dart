@@ -59,7 +59,17 @@ class AppPages {
     // GetPage(name: RouteName.detail_course, page: ())
 
     // GetPage(name: RouteName.video, page: () => VideoView(), binding: VideoB())
-    GetPage(name: RouteName.navbar, page:() => Navbar(), binding: NavbarBinding())
+    GetPage(
+      name: RouteName.navbar,
+      page: () => Navbar(),
+      binding: NavbarBinding(),
+    ),
+
+    GetPage(
+      name: RouteName.payment,
+      page: () => PaymentPageView(),
+      binding: PaymentPageBinding(),
+    )
   ];
 }
 

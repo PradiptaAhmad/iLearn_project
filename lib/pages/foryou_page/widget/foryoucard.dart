@@ -47,8 +47,8 @@ class ForYouCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(item['title'], style: titleCard()),
-              Text(item['decs'], style: subTitleCard()),
+              Text(item['title'], style: titleCard(size: 14, color: Colors.black)),
+              Text(item['decs'], style: subTitleCard(color: primaryColor)),
               Image.asset(
                 item['imagePath'],
                 width: MediaQuery.of(context).size.width * 0.3, // Sesuaikan ukuran gambar sesuai kebutuhan
