@@ -18,6 +18,8 @@ class PaymentCard extends GetView<PaymentPageController> {
         GestureDetector(
           onTap: () {
             controller.initWidget();
+            controller.isDebitClicked.value = false;
+            controller.isPaymentSelected.value = true;
             controller.updateWidget(title);
           },
           child: Container(

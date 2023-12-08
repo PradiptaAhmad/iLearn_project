@@ -55,7 +55,7 @@ class ForyouList extends GetView<ForyouPageController> {
                       child: Column(children: [
                         Text(
                           course.title!,
-                          style: titleCard(),
+                          style: titleCard(size: 14, color: Colors.black),
                         ),
                         Text(
                           course.description!,

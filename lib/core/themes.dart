@@ -77,12 +77,12 @@ TextStyle btnTime() {
 
 //Card yang di home
 
-TextStyle titleCard() {
+TextStyle titleCard({required final size, required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
-        color: Colors.black,
+        color: color,
           fontWeight: FontWeight.w600,
-          fontSize: figmaFontsize(14)));
+          fontSize: figmaFontsize(size)));
 }
 
 TextStyle subTitleCard({required final color}) {

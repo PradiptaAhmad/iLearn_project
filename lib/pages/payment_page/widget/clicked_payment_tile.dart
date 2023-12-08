@@ -22,6 +22,7 @@ class ClickedPaymentTile extends GetView<PaymentPageController> {
     return GestureDetector(
       onTap: () {
         controller.initWidget();
+        controller.isPaymentSelected.value = false;
       },
       child: Container(
         width: screenWidth * 0.9,

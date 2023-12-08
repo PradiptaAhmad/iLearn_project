@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/pages/foryou_page/widget/icontxt.dart';
 import 'package:ilearn_project/pages/detail_course/widget/playlistcourse.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../../core/themes.dart';
@@ -137,6 +138,9 @@ class DetailCourseView extends GetView<DetailCourseController> {
       //   },
       // ),
       floatingActionButton: GestureDetector(
+        onTap: () {
+          Get.toNamed(RouteName.payment, arguments: [controller.course]);
+        },
         child: Container(
             height: 50,
             margin: EdgeInsets.only(bottom: 15),

@@ -6,7 +6,10 @@ import 'package:ilearn_project/pages/payment_page/widget/payment_card.dart';
 class PaymentPageController extends GetxController {
   Rx<Widget?> walletWidget = Rx<Widget?>(null);
   Rx<Widget?> bankWidget = Rx<Widget?>(null);
+  Rx<Widget?> kiosWidget = Rx<Widget?>(null);
 
+  var isDebitClicked = false.obs;
+  var isPaymentSelected = false.obs;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -32,6 +35,15 @@ class PaymentPageController extends GetxController {
             image: "assets/images/payment/mandiri.svg", title: "Mandiri"),
         PaymentCard(
             image: "assets/images/payment/permata.svg", title: "Permata")
+      ],
+    );
+    kiosWidget.value = Row(
+      children: [
+        PaymentCard(
+            image: "assets/images/payment/indomaret.svg", title: "Indomaret"),
+        PaymentCard(
+            image: "assets/images/payment/alfamart.svg", title: "Alfamart"),
+        PaymentCard(image: "assets/images/payment/pos.svg", title: "POS"),
       ],
     );
   }
@@ -107,6 +119,27 @@ class PaymentPageController extends GetxController {
               image: "assets/images/payment/permata.svg",
               title: "Virtual Account Permata",
               description: "Pembayaran Menggunakan VIrtual Account Permata");
+        }
+      case "Indomaret":
+        {
+          kiosWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/indomaret.svg",
+              title: "Indomaret",
+              description: "Pembayaran Menggunakan Indomaret");
+        }
+      case "Alfamart":
+        {
+          kiosWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/alfamart.svg",
+              title: "Indomaret",
+              description: "Pembayaran Menggunakan Alfamart");
+        }
+      case "POS":
+        {
+          kiosWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/pos.svg",
+              title: "Kantor POS",
+              description: "Pembayaran Menggunakan Kantor POS");
         }
       default:
         {
