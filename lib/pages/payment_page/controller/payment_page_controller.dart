@@ -5,7 +5,7 @@ import 'package:ilearn_project/pages/payment_page/widget/payment_card.dart';
 
 class PaymentPageController extends GetxController {
   Rx<Widget?> walletWidget = Rx<Widget?>(null);
-  late Widget bankWigdet;
+  Rx<Widget?> bankWidget = Rx<Widget?>(null);
 
   @override
   void onInit() {
@@ -16,7 +16,7 @@ class PaymentPageController extends GetxController {
 
   Future<void> initWidget() async {
     walletWidget.value = Row(children: [
-      PaymentCard(image: "assets/images/payment/dana.svg", title: "Dana"),
+      PaymentCard(image: "assets/images/payment/dana.svg", title: "Dana",),
       PaymentCard(image: "assets/images/payment/gopay.svg", title: "Gopay"),
       PaymentCard(image: "assets/images/payment/ovo.svg", title: "Ovo"),
       PaymentCard(
@@ -33,6 +33,34 @@ class PaymentPageController extends GetxController {
               image: "assets/images/payment/dana.svg",
               title: "Dana",
               description: "Pembayaran Menggunakan Dana");
+        }
+      case "Gopay":
+        {
+          walletWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/gopay.svg",
+              title: "Gopay",
+              description: "Pembayaran Menggunakan Gopay");
+        }
+      case "Ovo":
+        {
+          walletWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/ovo.svg",
+              title: "OVO",
+              description: "Pembayaran Menggunakan OVO");
+        }
+      case "Shopee":
+        {
+          walletWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/shopeepay.svg",
+              title: "Shopee Pay",
+              description: "Pembayaran Menggunakan Shopee Pay");
+        }
+      case "Jenius":
+        {
+          walletWidget.value = ClickedPaymentTile(
+              image: "assets/images/payment/jenius.svg",
+              title: "Jenius Pay",
+              description: "Pembayaran Menggunakan Jenius Pay");
         }
       default:
         {

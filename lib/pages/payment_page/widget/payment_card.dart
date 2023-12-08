@@ -7,7 +7,7 @@ import 'package:ilearn_project/pages/index.dart';
 class PaymentCard extends GetView<PaymentPageController> {
   final String image;
   final String title;
-  PaymentCard({Key? key, required this.image, required this.title})
+  PaymentCard({Key? key, required this.image, required this.title,})
       : super(key: key);
 
   @override
