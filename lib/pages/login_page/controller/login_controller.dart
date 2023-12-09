@@ -39,8 +39,10 @@ class LoginPageController extends GetxController {
           writeToSharedPreference();
           Get.offAllNamed(RouteName.home);
     } on FirebaseAuthException catch (e) {
-      print(e);
-      if (e.code == 'INVALID_LOGIN_CREDENTIALS') {
+      print("kotnollll");
+      print(e.code);
+      if (e.code == 'invalid-credential') {
+
         print('No user found for that email.');
         isEmailAndPasswordCorrect.value = false;
         isEmailValid.value = false;

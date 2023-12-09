@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:lottie/lottie.dart';
 

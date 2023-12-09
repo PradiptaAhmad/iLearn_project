@@ -2,13 +2,11 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/models/transaction_model.dart';
 import 'package:ilearn_project/pages/index.dart';
-import 'package:ilearn_project/pages/payment_page/widget/payment_card.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_option.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_tile.dart';
 import 'package:ilearn_project/routes/route_name.dart';
