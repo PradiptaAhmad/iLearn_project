@@ -185,9 +185,12 @@ class RegisterPageView extends GetView<RegisterController> {
                 children: [
                   Text("Already have an account?"),
                   SizedBox(width: 10),
-                  Text(
-                    "Login",
-                    style: TextStyle(color: Color(0xFFFFD1AD)),
+                  InkWell(
+                    onTap: () => Get.back(),
+                    child: Text(
+                      "Login",
+                      style: TextStyle(color: Color(0xFFFFD1AD)),
+                    ),
                   ),
                 ],
               ),

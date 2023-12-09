@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true, 
       ),
       getPages: AppPages.pages,
-      initialRoute: RouteName.loading,
+      initialRoute: RouteName.login,
     );
   }
 }

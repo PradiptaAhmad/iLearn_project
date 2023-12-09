@@ -1,12 +1,17 @@
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/core/themes.dart';
 import 'package:get/get.dart';
+import 'package:ilearn_project/models/transaction_model.dart';
 import 'package:ilearn_project/pages/index.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_card.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_option.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_tile.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 
 class PaymentPageView extends GetView<PaymentPageController> {
   const PaymentPageView({super.key});
@@ -121,7 +126,7 @@ class PaymentPageView extends GetView<PaymentPageController> {
                   left: 15,
                 ),
                 child: Text(
-                  "Rp. ${controller.model.price!}",
+                  "Rp. ${controller.courseModel.price!}",
                   style: titleCard(size: 20, color: primaryColor),
                 ),
               )
@@ -129,7 +134,26 @@ class PaymentPageView extends GetView<PaymentPageController> {
           ),
           Spacer(),
           Obx(() => GestureDetector(
-                onTap: () {},
+                onTap: () async {
+                  controller
+                      .navigateToNamedPage(RouteName.navbar)
+                      .then((value) async {
+                    Future.delayed(Duration(seconds: 5), () async {
+                      await controller.writeToFirestore(
+                          transactionModel: TransactionModel(
+                        id: "",
+                        email: controller.email,
+                        courseId: controller.courseModel.id,
+                        price: controller.courseModel.price,
+                        paymentMethod: controller.paymentMethod.value,
+                        hash: Random().nextInt(1000000).toString(),
+                        product: controller.courseModel.title,
+                        order_at: Timestamp.fromDate(DateTime.now()),
+                      ));
+                      Get.offAllNamed(RouteName.navbar);
+                    });
+                  });
+                },
                 child: Container(
                   width: screenWidth * 0.28,
                   decoration: BoxDecoration(

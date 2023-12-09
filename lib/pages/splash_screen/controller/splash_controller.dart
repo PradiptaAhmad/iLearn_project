@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/routes/route_name.dart';
@@ -15,26 +16,17 @@ class SplashController extends GetxController {
     Future.delayed(Duration(seconds: 2), delay);
   }
   void RoutingPage() async {
+        print("kontolll");
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    User? user = FirebaseAuth.instance.currentUser;
 
-
-    bool? isNotFirstTime= prefs.getBool("isNotFirstTime");
-    bool? isLogin = prefs.getBool("isLogin");
-    print(isLogin);
-    print(isNotFirstTime);
-
-    if (isNotFirstTime == null || isNotFirstTime == false) {
-      delayed(() {
-        Get.offAllNamed(RouteName.onBoarding);
-      });
-    } else if (isLogin == false || isLogin == null) {
-      delayed(() {
-        Get.offAllNamed(RouteName.login);
-      });
-    } else if (isLogin == true) {
-      delayed(() {
-        Get.offAllNamed(RouteName.home);
-      });
+    if (prefs.getString('onboard') == null) {
+      Get.offAllNamed(RouteName.onBoarding);
+    } else if (user != null) {
+      Get.offAllNamed(RouteName.login);
+    } else {
+      Get.offNamed(RouteName.navbar);
     }
+
   }
 }

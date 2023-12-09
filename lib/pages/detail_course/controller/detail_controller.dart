@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:ilearn_project/models/course_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -8,7 +9,6 @@ class DetailCourseController extends GetxController {
 
   var youtube_link = "".obs;
   var courseId = ''.obs;
-  var email = ''.obs;
 
   late CourseModel  course;
 
@@ -21,11 +21,11 @@ class DetailCourseController extends GetxController {
   }
 
   void getBuyInfo() async {
-    getEmail();
+    String? email = FirebaseAuth.instance.currentUser!.email;
     final snapshot = await FirebaseFirestore.instance
         .collection('transaction')
         .where('courseId', isEqualTo: courseId.value)
-        .where('email', isEqualTo: 'pradiptaahmad8@gmail.com')
+        .where('email', isEqualTo: email!)
         .get();
         print(courseId.value);
     if (snapshot.docs.isNotEmpty) {
@@ -33,8 +33,4 @@ class DetailCourseController extends GetxController {
     }
   }
 
-  void getEmail() async {
-    final prefs = await SharedPreferences.getInstance();
-    email.value = prefs.getString('email')!;
-  }
 }

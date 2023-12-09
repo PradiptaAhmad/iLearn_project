@@ -1,16 +1,20 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class TransactionModel {
   String? id;
   String? email;
+  String? courseId;
   String? price;
   String? hash;
   String? paymentMethod;
   String? product;
-  DateTime? order_at;
+  Timestamp? order_at;
 
   TransactionModel({
     this.id,
     this.email,
+    this.courseId,
     this.price,
     this.hash,
     this.paymentMethod,
@@ -24,9 +28,10 @@ class TransactionModel {
       email: json['email'],
       price: json['price'],
       hash: json['hash'],
+      courseId: json['courseId'],
       paymentMethod: json['paymentMethod'],
       product: json['product'],
-      order_at: DateTime.parse(json['order_at'])
+      order_at: json['timestamp'] ?? Timestamp.now(),
     );
   }
 
@@ -34,6 +39,7 @@ class TransactionModel {
     'id': id,
     'email': email,
     'price': price,
+    'courseId': courseId,
     'hash': hash,
     'paymentMethod': paymentMethod,
     'product': product,

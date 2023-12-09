@@ -10,6 +10,6 @@ class LoadingPageView extends GetView<LoadingPageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Obx(() => controller.loadingWidget.value ?? Container()));
+        body: Obx(() => controller.loadingWidget.value!));
   }
 }

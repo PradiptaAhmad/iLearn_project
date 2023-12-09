@@ -11,24 +11,31 @@ class OnDoneLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Container(child: Lottie.asset(gif, repeat: false, animate: false)),
-            Positioned(
-              top: Get.height * 0.36,
-              child: Text(
-                text,
-                style: titleCard(size: 30, color: primaryColor),
-              ),
-            )
-          ],
-        )
-      ],
+    return Container(
+      height: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                  alignment: Alignment.center,
+                  child: Lottie.asset(gif,
+                      repeat: false, height: 100, width: 100)),
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.12,
+                child: Text(
+                  text,
+                  style: titleCard(size: 30, color: primaryColor),
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
