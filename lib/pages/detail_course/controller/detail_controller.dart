@@ -10,7 +10,7 @@ class DetailCourseController extends GetxController {
   var courseId = ''.obs;
   var email = ''.obs;
 
-  late CourseModel course;
+  late CourseModel  course;
 
   @override
   void onInit() {

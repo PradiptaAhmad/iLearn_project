@@ -47,3 +47,8 @@ export 'news_page/controller/news_page_controller.dart' show NewsPageController;
 export 'payment_page/view/payment_page_view.dart' show PaymentPageView;
 export 'payment_page/binding/payment_page_binding.dart' show PaymentPageBinding;
 export 'payment_page/controller/payment_page_controller.dart' show PaymentPageController;
+
+// Loading Page
+export 'loading_page/view/loading_page_view.dart' show LoadingPageView;
+export 'loading_page/controller/loading_page_controller.dart' show LoadingPageController;
+export 'loading_page/binding/loading_page_binding.dart' show LoadingPageBinding;

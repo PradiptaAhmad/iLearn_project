@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ilearn_project/models/course_model.dart';
 import 'package:ilearn_project/pages/payment_page/widget/clicked_payment_tile.dart';
 import 'package:ilearn_project/pages/payment_page/widget/payment_card.dart';
 
@@ -10,6 +11,9 @@ class PaymentPageController extends GetxController {
 
   var isDebitClicked = false.obs;
   var isPaymentSelected = false.obs;
+
+  // Get Argument
+  final CourseModel model = Get.arguments[0];
   @override
   void onInit() {
     // TODO: implement onInit
@@ -148,5 +152,13 @@ class PaymentPageController extends GetxController {
           );
         }
     }
+  }
+
+  Future<void> navigateToNamedPage(String page) async {
+    Get.toNamed(page);
+  }
+  
+  Future<void> writeToFirestore() async {
+    
   }
 }

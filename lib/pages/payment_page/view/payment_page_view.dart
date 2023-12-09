@@ -121,7 +121,7 @@ class PaymentPageView extends GetView<PaymentPageController> {
                   left: 15,
                 ),
                 child: Text(
-                  "Rp. 120.000",
+                  "Rp. ${controller.model.price!}",
                   style: titleCard(size: 20, color: primaryColor),
                 ),
               )
