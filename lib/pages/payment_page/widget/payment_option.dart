@@ -17,7 +17,6 @@ class PaymentOption extends GetView<PaymentPageController> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = Get.height;
-    double screenWidth = Get.width;
     return Obx(() => GestureDetector(
           onTap: onClicked,
           child: Container(
