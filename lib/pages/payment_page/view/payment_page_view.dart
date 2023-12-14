@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ilearn_project/core/themes.dart';
@@ -134,9 +136,17 @@ class PaymentPageView extends GetView<PaymentPageController> {
           Obx(() => GestureDetector(
                 onTap: () async {
                   controller
-                      .navigateToNamedPage(RouteName.navbar)
+                      .navigateToNamedPage(RouteName.loading)
                       .then((value) async {
                     Future.delayed(Duration(seconds: 5), () async {
+                      String transactionData =
+                          " ${controller.courseModel.id} ${controller.courseModel.price} ${controller.paymentMethod.value} ${controller.courseModel.title} ${controller.email}";
+
+                      // Create a SHA-256 hash
+                      String hash = sha256
+                          .convert(utf8.encode(transactionData))
+                          .toString();
+
                       await controller.writeToFirestore(
                           transactionModel: TransactionModel(
                         id: "",
@@ -144,7 +154,7 @@ class PaymentPageView extends GetView<PaymentPageController> {
                         courseId: controller.courseModel.id,
                         price: controller.courseModel.price,
                         paymentMethod: controller.paymentMethod.value,
-                        hash: Random().nextInt(1000000).toString(),
+                        hash: hash,
                         product: controller.courseModel.title,
                         order_at: Timestamp.fromDate(DateTime.now()),
                       ));
