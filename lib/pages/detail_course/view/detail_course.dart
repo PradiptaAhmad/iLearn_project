@@ -137,7 +137,10 @@ class DetailCourseView extends GetView<DetailCourseController> {
       //     );
       //   },
       // ),
-      floatingActionButton: GestureDetector(
+      floatingActionButton: Obx(
+        () => controller.isBuyed.value
+            ? SizedBox()
+            : GestureDetector(
         onTap: () {
           Get.toNamed(RouteName.payment, arguments: [controller.course]);
         },
@@ -153,6 +156,7 @@ class DetailCourseView extends GetView<DetailCourseController> {
                 style: buttonTxt(),
               ),
             )),
+              ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

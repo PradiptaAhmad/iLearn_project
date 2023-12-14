@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ilearn_project/routes/route_name.dart';
 
 class RegisterController extends GetxController {
   var isObsecure = true.obs;
@@ -36,6 +37,7 @@ class RegisterController extends GetxController {
         password: password.value,
       );
       await addDataToFirestore(); // Wait for addDataToFirestore to complete
+      Get.offAllNamed(RouteName.navbar);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         // Handle weak password

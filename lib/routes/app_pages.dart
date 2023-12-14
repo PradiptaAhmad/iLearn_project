@@ -69,7 +69,12 @@ class AppPages {
       name: RouteName.payment,
       page: () => PaymentPageView(),
       binding: PaymentPageBinding(),
-    )
+    ),
+        GetPage(
+      name: RouteName.loading,
+      page: () => LoadingPageView(),
+      binding: LoadingPageBinding(),
+    ),
   ];
 }
 
